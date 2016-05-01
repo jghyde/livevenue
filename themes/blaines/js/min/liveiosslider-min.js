@@ -1,0 +1,1 @@
+!function($,i,t){i.behaviors.yourbehavior={attach:function(i,t){function e(i,t){var e=0,h=i*(9/16);h>t&&(e=t),$(".iosslider").width(i).height(e),$(".slider").width(i).height(e),$(".slide").width(i).height(e)}var h=$(window).width(),o=$(window).height();e(h,o),$(window).resize(function(){e(h,o)}),console.log("Loaded")}}}(jQuery,Drupal,drupalSettings);

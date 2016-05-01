@@ -1,3 +1,60 @@
 [submodule "themes/bootstrap"]
 	path = themes/bootstrap
 	url = https://git.drupal.org/project/bootstrap.git
+[submodule "modules/contrib/media_entity"]
+	path = modules/contrib/media_entity
+	url = https://git.drupal.org/project/media_entity.git
+[submodule "modules/contrib/media_entity_image"]
+	path = modules/contrib/media_entity_image
+	url = https://git.drupal.org/project/media_entity_image.git
+[submodule "modules/contrib/media_entity_slideshow"]
+	path = modules/contrib/media_entity_slideshow
+	url = https://git.drupal.org/project/media_entity_slideshow.git
+[submodule "modules/contrib/media_entity_twitter"]
+	path = modules/contrib/media_entity_twitter
+	url = https://git.drupal.org/project/media_entity_twitter.git
+[submodule "modules/contrib/media_entity_instagram"]
+	path = modules/contrib/media_entity_instagram
+	url = https://git.drupal.org/project/media_entity_instagram.git
+[submodule "modules/contrib/embed"]
+	path = modules/contrib/embed
+	url = https://git.drupal.org/project/embed.git
+[submodule "modules/contrib/image_effects"]
+	path = modules/contrib/image_effects
+	url = git@github.com:drupal-media/image_effects.git
+[submodule "modules/contrib/crop"]
+	path = modules/contrib/crop
+	url = git@github.com:drupal-media/crop.git
+[submodule "modules/contrib/media_entity_embeddable_vide"]
+	path = modules/contrib/media_entity_embeddable_vide
+	url = git@github.com:drupal-media/media_entity_embeddable_video.git
+[submodule "modules/contrib/dropzonejs"]
+	path = modules/contrib/dropzonejs
+	url = git@github.com:drupal-media/dropzonejs.git
+[submodule "modules/contrib/image_widget_crop"]
+	path = modules/contrib/image_widget_crop
+	url = git@github.com:drupal-media/image_widget_crop.git
+[submodule "modules/contrib/inline_entity_form"]
+	path = modules/contrib/inline_entity_form
+	url = https://git.drupal.org/project/inline_entity_form.git
+[submodule "modules/contrib/paragraphs"]
+	path = modules/contrib/paragraphs
+	url = https://git.drupal.org/project/paragraphs.git
+[submodule "modules/contrib/ctools"]
+	path = modules/contrib/ctools
+	url = https://git.drupal.org/project/ctools.git
+[submodule "modules/contrib/fontyourface"]
+	path = modules/contrib/fontyourface
+	url = https://git.drupal.org/project/fontyourface.git
+[submodule "modules/contrib/file_entity"]
+	path = modules/contrib/file_entity
+	url = https://git.drupal.org/project/file_entity.git
+[submodule "libraries/dropzone"]
+	path = libraries/dropzone
+	url = git@github.com:enyo/dropzone.git
+[submodule "libraries/imagesloaded"]
+	path = libraries/imagesloaded
+	url = git@github.com:desandro/imagesloaded.git
+[submodule "libraries/masonry"]
+	path = libraries/masonry
+	url = git@github.com:desandro/masonry.git

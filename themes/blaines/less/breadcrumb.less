@@ -1,0 +1,60 @@
+div#hydebread {
+  background-color: @rgba-primary-2;
+  border: 1px solid @rgba-primary-4;
+  margin-bottom: 1em;
+  ol.breadcrumb {
+    border-radius: 0;
+    display: block;
+    margin: 0;
+    padding: 0;
+    li {
+      color: rgb(255,255,255);
+      display: block;
+      a, a:link, a:visited {
+        background-color: @rgba-primary-3;
+        color: rgb(255,255,255);
+        display: block;
+        float: left;
+        font-size: 12px;
+        padding: 7px 16px 7px 19px;
+        position: relative;
+        text-decoration: none;
+        border: 1px solid @rgba-primary-0;
+        border-right-width: 0;
+        border-bottom-width: 0;
+        border-top-width: 0;
+      }
+      a:hover {
+        background-color: @rgba-complement-4;
+      }
+    }
+    li:first-child {
+
+      a {
+        background-color: @rgba-primary-4;
+      }
+      a:hover {
+        background-color: @rgba-secondary-2-4;
+      }
+    }
+    li:last-child {
+      color: rgb(255,255,255);;
+      display: block;
+      float: left;
+      font-size: 12px;
+      padding: 7px 16px 7px 19px;
+      position: relative;
+      text-decoration: none;
+      border: 1px solid @rgba-primary-4;
+      border-right-width: 0;
+      border-bottom-width: 0;
+      border-top-width: 0;
+      background: transparent;
+    }
+    li::before {
+      content: none;
+      padding: 0;
+      color: transparent;
+    }
+  }
+}

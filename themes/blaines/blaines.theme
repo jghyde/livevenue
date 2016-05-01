@@ -1,0 +1,101 @@
+<?php
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+
+/**
+ * Implements hook_theme_suggestions_page_alter()
+ * @param array $suggestions
+ * @param array $variables
+ */
+function blaines_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Add content type suggestions.
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    array_splice($suggestions, 1, 0, 'page__' . $node->getType());
+  }
+}
+
+function blaines_preprocess_page(&$var) {
+  if ($var['node']) {
+    if (($node = \Drupal::routeMatch()->getParameter('node')) && $node instanceof \Drupal\node\NodeInterface) {
+      $i = 0;
+    }
+
+    //$header_image = $node->get('field_main_image')->value;
+  }
+}
+
+/**
+ * @param $var
+ */
+function blaines_preprocess_region(&$var) {
+  // Create the $content variable that templates expect.
+  $is_front = FALSE;
+  if (isset($var['elements']['#region']) && $var['elements']['#region'] == 'hero') {
+    //@TODO: pull artist first pic for hero of event node.
+    if (($node = \Drupal::routeMatch()->getParameter('node')) && $node instanceof \Drupal\node\NodeInterface) {
+      // is it an event, artist, or just a plain pages
+      $type = $node->getType();
+      switch ($type) {
+        case 'artist':
+          $header_image = $node->get('field_main_image')->getValue();
+          break;
+        case 'event':
+          if (isset($node->fields['field_main_image'])) {
+            $header_image = $node->get('field_main_image')->getValue();
+          }
+          else {
+            // The event has no field_main_image and we must extract it from the referenced artist node
+            $nid = $node->get('field_artist')->getValue();
+            $artist = \Drupal\node\Entity\Node::load((int)$nid[0]['target_id']);
+            $header_image = $artist->get('field_main_image')->getValue();
+          }
+          break;
+        case 'page':
+          if ($_SERVER['REQUEST_URI'] == '/') {
+            $is_front = TRUE;
+          }
+      }
+      if (isset($header_image[0]['target_id']) && !empty($header_image[0]['target_id'])) {
+        $fid = $header_image[0]['target_id'];
+        $file = \Drupal\file\Entity\File::load($fid);
+        $url = \Drupal\image\Entity\ImageStyle::load('16_9large')
+            ->buildUrl($file->getFileUri());
+        $var['main_image'] = $url;
+        $var['title'] = $var['elements']['blaines_page_title']['#markup'];
+        $var['breadcrumbs'] = $var['elements']['blaines_breadcrumbs']['#markup'];
+      }
+      else {
+        //$var['main_image'] = '';
+        $var['title'] = $var['elements']['blaines_page_title']['#markup'];
+        //$var['breadcrumbs'] = $var['elements']['blaines_breadcrumbs']['#markup'];
+        if (isset($var['elements']['views_block__ios_slider_iosslider']['#markup'])) {
+          $var['iosslider'] = $var['elements']['views_block__ios_slider_iosslider']['#markup'];
+        }
+      }
+    }
+    else {
+      // get default image. Store the fid in variables table so it can be changed
+    }
+  }
+}
+
+function blaines_preprocess_views_view_fields($vars) {
+  if ($vars['view']->current_display == 'iosslider') {
+    if (isset($vars['fields']['field_main_image_1']->content->string) && strpos($vars['fields']['field_main_image_1']->content->string, 'http')) {
+      //then the main image is coming from the event node not the artist node that is a relationship,
+      //so we need to insert the contents into the field_main_image
+      $vars['fields']['field_main_image']->content->string = $vars['fields']['field_main_image_1']->content->string;
+    }
+  }
+}
+function blaines_preprocess_views_view_unformatted($vars) {
+  $i = 0;
+}
+function blaines_preprocess_fields($vars) {
+  $i = 0;
+}
+

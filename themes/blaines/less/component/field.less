@@ -1,0 +1,81 @@
+/**
+ * @file
+ * Visual styles for fields.
+ */
+article {
+  .content {
+    .field {
+      margin-bottom: 1em;
+    }
+  }
+}
+.field--label {
+  font-weight: bold;
+}
+.field--label-inline .field--label,
+.field--label-inline .field--items {
+  float: left; /*LTR*/
+}
+.field--label-inline .field--label,
+.field--label-inline > .field--item,
+.field--label-inline .field--items {
+  padding-right: 0.5em;
+}
+[dir="rtl"] .field--label-inline .field--label,
+[dir="rtl"] .field--label-inline .field--items {
+  padding-left: 0.5em;
+  padding-right: 0;
+}
+.field--label-inline .field--label::after {
+  content: ':';
+}
+.paragraph--type--text-with-image-right, .paragraph--type--text-with-image-left {
+  .field--name-field-formatted-text {
+  }
+  .field--name-field-image.img-thumbnail {
+    padding: 15px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+.paragraph--type--text-with-image-right {
+ .field--name-field-formatted-text {
+   padding-left: 0;
+ }
+}
+.paragraph--type--text-area {
+  clear:both;
+}
+.paragraph--type--video-embed {
+  padding: 5px 20%;
+  background-color: @rgba-complement-2;
+  clear: both;
+  margin-bottom: 1em;
+  .field--item {
+    -webkit-box-shadow: 0px 0px 10px 4px rgba( 59, 30,  0, 0.76);
+    -moz-box-shadow:    0px 0px 10px 4px rgba( 59, 30,  0, 0.76);
+    box-shadow:         0px 0px 10px 4px rgba( 59, 30,  0, 0.76);
+  }
+}
+@media screen and (max-width: @screen-md-min) {
+  .paragraph--type--video-embed {
+    padding: 5px 5%;
+  }
+}
+.field--name-field-paypal {
+  width: 20%;
+  min-width: 400px;
+  float: left;
+  margin: 0 1em 1em 0;
+}
+@media screen and (max-width: @screen-md-min) {
+  .field--name-field-paypal {
+    width: 100%;
+    margin: 0 0 1em 0 ;
+  }
+}
+.field--name-field-date {
+  font-size: larger;
+}
