@@ -1,0 +1,25 @@
+/**
+ * @file
+ * Panel styling. Panels are used to visually group items together.
+ */
+
+.panel {
+  margin: 0 0 1em;
+  padding: 1em 1em 0;
+  background: #F5F5F5;
+}
+.panel__title {
+  font-size: .9em;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin: 0;
+}
+.panel__description {
+  margin: 0 0 3px;
+  padding: 2px 0 3px 0;
+}
+.panel ul.admin-list {
+  margin: 0;
+}
+
+

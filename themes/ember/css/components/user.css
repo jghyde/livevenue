@@ -1,0 +1,12 @@
+/**
+ * @file
+ * Theme styling for user module.
+ */
+
+/* Visual styling for the Password strength indicator */
+.password-strength__meter {
+  background-color: #F3F3F3;
+}
+.password-strength__indicator {
+  background-color: #F3F3F3;
+}

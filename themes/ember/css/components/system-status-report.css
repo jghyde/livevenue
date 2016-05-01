@@ -1,0 +1,34 @@
+/**
+ * @file
+ * Seven styles for the System Status Report.
+ */
+
+.system-status-report__entry {
+  border-top: 1px solid #ccc;
+  border-bottom: inherit;
+}
+.system-status-report__entry:first-child {
+  border-top: 1px solid #bebfb9;
+}
+.system-status-report__entry:last-child {
+  border-bottom: 1px solid #bebfb9;
+}
+/**
+ * Status report table.
+ */
+table.system-status-report tr {
+  border-top: 1px solid #ccc;
+  border-bottom: inherit;
+}
+table.system-status-report tr:first-child {
+  border-top: 1px solid #bebfb9;
+}
+table.system-status-report tr:last-child {
+  border-bottom: 1px solid #bebfb9;
+}
+table.system-status-report td {
+  padding: 12px;
+}
+table.system-status-report td:nth-child(-n+2) {
+ background-color: transparent;
+}

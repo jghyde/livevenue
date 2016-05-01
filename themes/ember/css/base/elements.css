@@ -1,0 +1,182 @@
+/**
+ * Generic elements.
+ */
+body {
+  color: #333;
+  background: #fff;
+  font: normal 90%/1.538em "montserratlight", "Helvetica Neue", "Helvetica-Neue", Helvetica, Arial, sans-serif;
+}
+a .link {
+  font-family: "montserratregular";
+}
+a,
+.link {
+  color: #2288AA;
+  text-decoration: none;
+}
+a:hover,
+.link:hover {
+  color: #555;
+}
+a:focus,
+.link:focus {
+  color: #333;
+  outline: none;
+}
+hr {
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 1px;
+  background: #CCC;
+}
+
+/**
+ * Reusable heading classes are included to help modules change the styling of
+ * headings on a page without affecting accessibility.
+ */
+
+h1,
+.heading-a {
+  font-family: "montserratlight";
+  font-size: 1.625em;
+  margin: 0;
+  line-height: 1.875em;
+}
+h2,
+.heading-b,
+h3,
+.heading-c,
+h4,
+.heading-d, 
+h5,
+.heading-e,
+h6,
+.heading-f {
+  color: #555;
+  font-weight: normal;
+  margin: 10px 0;
+}  
+h2,
+.heading-b {
+  font-family: "montserratregular";
+  font-size: 1.385em;
+}
+h3,
+.heading-c {
+  font-family: "montserratsemi_bold";
+  font-size: 1.231em;
+}
+h4,
+.heading-d {
+  font-family: "montserratsemi_bold";
+  font-size: 1.154em;
+}
+h5,
+.heading-e {
+  font-family: "montserratsemi_bold";
+  font-size: 1.077em;
+}
+h6,
+.heading-f {
+  font-family: "montserratsemi_bold";
+  font-size: 1.077em;
+}
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 0;
+  margin-left: 0;
+}
+dl {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 20px;
+}
+dl dd,
+dl dl {
+  margin-left: 20px; /* LTR */
+  margin-bottom: 10px;
+}
+[dir="rtl"] dl dd,
+[dir="rtl"] dl dl {
+  margin-right: 20px;
+}
+blockquote {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+address {
+  font-style: italic;
+}
+u,
+ins {
+  text-decoration: underline;
+}
+s,
+strike,
+del {
+  text-decoration: line-through;
+}
+big {
+  font-size: larger;
+}
+small {
+  font-size: smaller;
+}
+sub {
+  vertical-align: sub;
+  font-size: smaller;
+  line-height: normal;
+}
+sup {
+  vertical-align: super;
+  font-size: smaller;
+  line-height: normal;
+}
+nobr {
+  white-space: nowrap;
+}
+abbr,
+acronym {
+  border-bottom: dotted 1px;
+}
+ul {
+  list-style-type: disc;
+  list-style-image: none;
+  margin-top: 0.25em;
+  margin-right: 0 0.25em;
+  margin-bottom: 1.5em; /* LTR */
+}
+[dir="rtl"] ul {
+  margin-left: 0;
+  margin-right: 1.5em;
+}
+ol {
+  list-style-type: decimal;
+  margin-top: 0.25em;
+  margin-right: 0;
+  margin-bottom: 0.25em;
+  margin-left: 2em; /* LTR */
+  padding: 0;
+}
+[dir="rtl"] ol {
+  margin-left: 0;
+  margin-right: 2em;
+}
+quote,
+code {
+  margin: .5em 0;
+}
+pre {
+  margin: 0.5em 0;
+  white-space: pre-wrap;
+}
+strong {
+  font-family: "montserratsemi_bold";
+  font-weight: normal;
+  color: #555;
+}

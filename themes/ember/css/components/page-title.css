@@ -1,0 +1,15 @@
+/**
+ * @file
+ * Page title.
+ */
+.page-title {
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+}
+.content-header h1 {
+  font-family: "montserratultra_light";
+  font-size: 2.5em;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0 0 5px;
+}

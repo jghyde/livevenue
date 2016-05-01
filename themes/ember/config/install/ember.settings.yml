@@ -1,0 +1,8 @@
+features:
+  node_user_picture: false
+  comment_user_picture: false
+  comment_user_verification: false
+  favicon: false
+favicon:
+  use_default: true
+  path: ''

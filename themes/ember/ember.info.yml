@@ -1,0 +1,30 @@
+name: Ember
+type: theme
+base theme: classy
+description: 'To do'
+alt text: 'To do'
+version: VERSION
+core: 8.x
+libraries:
+ - ember/global-styling
+stylesheets-remove:
+  - core/assets/vendor/jquery.ui/themes/base/dialog.css
+  - core/themes/classy/css/components/details.css
+  - core/themes/classy/css/components/tableselect.css
+  - core/themes/stable/css/system/system.admin.css
+  - core/themes/stable/css/core/vertical-tabs.css
+quickedit_stylesheets:
+  - css/components/quickedit.css
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  sidebar_third: 'Third sidebar'
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+regions_hidden:
+  - sidebar_first

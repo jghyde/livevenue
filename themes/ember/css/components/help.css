@@ -1,0 +1,11 @@
+/**
+ * @file
+ * Ember styles for the help component.
+ */
+#block-ember-help {
+  background: #f5f5f5;
+  padding: .01em 1em;
+}
+.help p {
+  margin: 0 0 10px;
+}

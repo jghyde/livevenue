@@ -1,0 +1,75 @@
+/**
+ * @file
+ * Override Quick Edit's entity toolbar style on the Drupal front-end.
+ *
+ * I.e. loaded by Quick Edit on the front-end, despite this being a back-end theme.
+ */
+
+.quickedit-toolbar-container {
+  z-index: 600 !important;
+}
+.quickedit-toolbar-container > .quickedit-toolbar-content {
+  padding:0px !important;
+  background: #f5f5f5 !important;
+  background-image: none !important;
+}
+.quickedit-toolbar-container > .quickedit-toolbar-content,
+.quickedit-toolbar-container > .quickedit-toolbar-lining {
+  border-radius: 0px;
+}
+.quickedit-button {
+  border-radius:0px;
+}
+/* style the discard modal like other UI modals in Ember */
+.quickedit-discard-modal .button {
+  background-color: transparent !important;
+  background-image: none;
+  border: none !important;
+}
+/**
+ * Entity toolbar's "save" button must be styled like Ember's primary button.
+ */
+.quickedit-button.action-save,
+.quickedit-button.action-saving,
+.quickedit-discard-modal .button--primary {
+  padding: 4px 1.5em; 
+  border: 2px solid #39B4E9 !important;
+  border-radius: 20em !important;
+  background-color: #fff !important;
+  background-image: none !important;
+  color: #39B4E9 !important;
+  transition: all 0.1s;
+}
+.quickedit-button.action-save:hover,
+.quickedit-button.action-save:focus,
+.quickedit-button.action-saving:hover,
+.quickedit-button.action-saving:focus,
+.quickedit-discard-modal .button--primary:hover,
+.quickedit-discard-modal .button--primary:focus {
+  background-color: #2369a6;
+  background-image: none;
+  border-color: #1e5c90;
+  color: #fff;
+  outline: none;
+}
+.quickedit-button.action-save:active,
+.quickedit-button.action-saving:active {
+  color: #555;
+  text-decoration: none;
+  outline: none;
+}
+.quickedit-toolgroup.wysiwyg-main {
+  color: #555;
+  z-index: 10;
+  border-top: 1px solid #ccc;
+}
+.quickedit-discard-modal .ui-dialog-titlebar,
+.quickedit-discard-modal .ui-dialog-buttonpane {
+  background: #f5f5f5 !important;
+  border:0px !important;
+}
+.quickedit-discard-modal .ui-dialog-buttonpane {
+  float: left;
+}
+
+

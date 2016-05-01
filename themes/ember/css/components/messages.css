@@ -1,0 +1,64 @@
+/**
+ * Messages.
+ */
+
+.messages {
+  color: #333;
+  background: no-repeat 10px 17px;  /* LTR */
+  border: 1px solid #DDD;
+  border-radius: 0px;
+  padding: 15px 20px 15px 35px; /* LTR */
+  margin: 1em 0 1em 8px; /* LTR */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+[dir="rtl"] .messages {
+  background-position: right 10px top 17px;
+  padding-left: 20px;
+  padding-right: 35px;
+  margin: 1em 8px 1em 0;
+  text-align: right;
+}
+.messages pre {
+  margin: 0;
+}
+.messages + .messages {
+  margin-top: 1.538em;
+}
+.messages__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.messages__item + .messages__item {
+  margin-top: 0.769em;
+}
+/* See .color-success in Ember's colors.css */
+/* box shadow is used here to create the thick left border */
+.messages--status {
+  background-color: #F9F9F9;
+  background-image: url(../../../../core/misc/icons/73b355/check.svg);
+  box-shadow: -8px 0 0 #77B259; /* LTR */
+}
+[dir="rtl"] .messages--status {
+  box-shadow: 8px 0 0 #77B259;
+}
+/* See .color-warning in Ember's colors.css */
+.messages--warning {
+  background-color: #F9F9F9;
+  background-image: url(../../../../core/misc/icons/e29700/warning.svg);
+  box-shadow: -8px 0 0 #E29700; /* LTR */
+}
+[dir="rtl"] .messages--warning {
+  box-shadow: 8px 0 0 #C09600; 
+}
+/* See .color-error in Ember's colors.css */
+.messages--error {
+  background-color: #F9F9F9;
+  background-image: url(../../../../core/misc/icons/e32700/error.svg);
+  box-shadow: -8px 0 0 #E62600; /* LTR */
+}
+[dir="rtl"] .messages--error {
+  box-shadow: 8px 0 0 #E62600;
+}
+

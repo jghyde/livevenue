@@ -1,0 +1,115 @@
+/**
+ * @file
+ * Replaces stable vertical-tabs.css.
+ */
+
+.vertical-tabs {
+  position: relative;
+  overflow: hidden;
+  margin: 10px 0;
+  border: 1px solid #DDD;
+  border-collapse: collapse;
+  background: #FFF;
+}
+.vertical-tabs__menu {
+  float: left; /* LTR */
+  width: 240px;
+  margin: 0 -100% -1px 0; /* LTR */
+  padding: 0;
+  border-bottom: 1px solid #DDD;
+  border-top: 0;
+  line-height: 1;
+}
+[dir="rtl"] .vertical-tabs__menu {
+  float: right;
+  margin: 0 0 -1px -100%;
+}
+.vertical-tabs__menu-item {
+  position: relative;
+  border: 0;
+}
+.vertical-tabs__menu-item.is-selected {
+  z-index: 1;
+  overflow-x: hidden;
+  width: 100%;
+  border: 0;
+  border-right: 1px solid #FFF; /* LTR */
+}
+.vertical-tabs__menu-item.last {
+  border-bottom: none;
+}
+[dir="rtl"] .vertical-tabs__menu-item.is-selected {
+  border-left: 1px solid #FFF;
+  border-right: none;
+}
+.vertical-tabs__menu-item:focus,
+.vertical-tabs__menu-item:active {
+  z-index: 2;
+}
+.vertical-tabs__menu-item.is-selected:focus {
+  outline: none;
+}
+.vertical-tabs__menu-item a {
+  display: block;
+  padding: 10px 15px 15px;
+  border-bottom: 1px solid #DDD;
+  background-color: #F5F5F5;
+  text-decoration: none;
+}
+.vertical-tabs__menu-item:last-child a {
+  border-bottom: 0;
+}
+.vertical-tabs__menu-item.is-selected a,
+.vertical-tabs__menu-item a:hover,
+.vertical-tabs__menu-item a:focus {
+  background: #FFF;
+  text-shadow: none;
+  text-decoration: none;
+  border-right: 0;
+  outline: none;
+}
+.vertical-tabs__menu-item.is-selected a {
+  color: #333;
+  border-left: 4px solid #39B4E9; /* LTR */
+  padding-left: 11px; /* LTR */
+  border-bottom: 1px solid #DDD;
+  outline: none;
+  text-decoration: none;
+}
+[dir=rtl] .vertical-tabs__menu-item.is-selected a {
+  border-left: 0;
+  border-right: 4px solid #39B4E9;
+  padding-left: 15px;
+  padding-right: 11px;
+}
+[data-vertical-tabs-panes] {
+  background-color: #FFF;
+}
+/* Margin on vertical-tabs-panes must match with of vertical-tabs__menu */
+.vertical-tabs__panes {
+  margin: 0 0 0 240px; /* LTR */
+  border-left: 1px solid #DDD; /* LTR */
+}
+[dir="rtl"] .vertical-tabs__panes {
+  margin: 0 240px 0 0;
+  border-left: none;
+  border-right: 1px solid #DDD;
+}
+.vertical-tabs__panes:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.vertical-tabs__pane {
+  margin: 0;
+  border: 0;
+  padding: .5em 2em;
+}
+.vertical-tabs__menu-item-summary {
+  display: block;
+  padding-top: 0.4em;
+  color: #666;
+}
+.vertical-tabs__pane > summary {
+  display: none;
+}

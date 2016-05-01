@@ -1,0 +1,118 @@
+/* Modules page */
+
+.system-modules details {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.system-modules summary {
+  text-transform: none;
+  font-size: 1em;
+  padding-left: 1em;
+}
+.system-modules .fieldset-wrapper {
+  padding: 0;
+}
+.system-modules tr.even,
+.system-modules tr.odd,
+.locale-translation-status-form tr.even,
+.locale-translation-status-form tr.odd,
+.system-modules thead,
+.system-modules thead tr,
+.system-modules thead th  {
+  border: 0;
+}
+.system-modules td {
+  padding: 3px 12px;
+}
+.system-modules tr:hover {
+  background: transparent;
+} 
+.system-modules td.description:focus {
+  background: F5F5F5;
+}
+.system-modules td.description {
+  padding-right: 0px; /* LTR */
+}
+[dir rtl] .system-modules td.description {
+  padding-left: 0px; 
+}
+.system-modules td.description [open] {
+  background: #F5F5F5;
+}
+.system-modules .details-description {
+  padding: 0 0 1em 1em;
+}
+.system-modules .details-wrapper > tr {
+  padding: 0 1em;
+}
+.system-modules td .form-item {
+  padding: 0;
+}
+.system-modules .module {
+  width: 25%;
+  min-width: 200px;
+}
+@media screen and (max-width: 60em) { /* 920px */
+  .system-modules .module {
+  width: auto;
+  min-width: 0;
+  }
+}
+@media screen and (max-width: 37.5em) { /* 600px */
+  .system-modules th.priority-low,
+  .system-modules td.priority-low,
+  .system-modules th.priority-medium,
+  .system-modules td.priority-medium {
+    display: block;
+  }
+}
+
+/* Table row backgrounds that differ from standard table styling 
+.system-modules details {
+  background-color: #EEE;
+  margin-bottom: 3px;
+}
+details:not(.package-listing),
+.system-modules tr.odd,
+.system-modules tr.even {
+  background-color: #FFF;
+}*/
+
+/* Not sure if these are needed but keeping them here in case I encounter a problem */
+/*
+.system-modules td.module {
+  width: auto;
+  max-width: 100%;
+}
+@media screen and (max-width: 40em) {
+  .system-modules td.name {
+    width: auto;
+    max-width: 100%;
+  }
+  .system-modules td.description {
+    width: auto;
+  }
+}
+.system-modules fieldset {
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+.system-modules table,
+.locale-translation-status-form table {
+  border: 0;
+}
+
+.system-modules tr td:last-child,
+.locale-translation-status-form tr td:last-child {
+  border: 0;
+}
+.system-modules table th,
+.locale-translation-status-form table th {
+  border: 0;
+  border-bottom: 10px solid #fff;
+}
+*/
+
+

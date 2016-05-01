@@ -1,0 +1,125 @@
+
+/**
+ * Appearance page.
+ */
+.theme-info__description {
+  margin-top: 0;
+}
+.system-themes-list {
+  margin-bottom: 1.5em;
+}
+.system-themes-list-uninstalled {
+  border-top: 1px solid #DDD;
+  padding-top: 1.5em;
+}
+.system-themes-list__header {
+  margin: 0;
+}
+.theme-selector {
+  float: left; /* LTR */
+  padding-top: 1.5em;
+}
+[dir="rtl"].theme-selector {
+  float: right; /* LTR */
+}
+.theme-selector .screenshot,
+.theme-selector .no-screenshot {
+  border: 1px solid #DDD;
+  vertical-align: bottom;
+  max-width: 100%;
+  height: auto;
+}
+.system-themes-list-uninstalled .screenshot,
+.system-themes-list-uninstalled .no-screenshot {
+  max-width: 194px;
+  height: auto;
+}
+
+/**
+ * Theme display without vertical toolbar.
+ */
+@media screen and (min-width: 45em) {
+  body:not(.toolbar-vertical) .system-themes-list-installed .screenshot,
+  body:not(.toolbar-vertical) .system-themes-list-installed .no-screenshot {
+    float: none;
+    margin-right: 1.5em; /* LTR */
+    width: 250px;
+  }
+  [dir="rtl"] body:not(.toolbar-vertical) .system-themes-list-installed .screenshot,
+  [dir="rtl"] body:not(.toolbar-vertical) .system-themes-list-installed .no-screenshot {
+    margin-left: 1.5em;
+  }
+  body:not(.toolbar-vertical) .system-themes-list-installed .system-themes-list__header {
+    margin-top: 0;
+  }
+  body:not(.toolbar-vertical) .system-themes-list-uninstalled .theme-info {
+    min-height: 170px;
+  }
+}
+
+/**
+ * Theme display with vertical toolbar.
+ */
+@media screen and (min-width: 60em) {
+  .toolbar-vertical .system-themes-list-installed .screenshot,
+  .toolbar-vertical .system-themes-list-installed .no-screenshot {
+    margin-right: 1.5em; /* LTR */
+    width: 250px;
+  }
+  [dir="rtl"] .toolbar-vertical .system-themes-list-installed .screenshot,
+  [dir="rtl"] .toolbar-vertical .system-themes-list-installed .no-screenshot {
+    margin-left: 1.5em;
+  }
+  .toolbar-vertical .system-themes-list-uninstalled .theme-selector {
+    width: 31.25%;
+  }
+  .toolbar-vertical .system-themes-list-uninstalled .theme-info {
+    min-height: 170px;
+  }
+}
+.system-themes-list-installed .theme-info {
+  max-width: 250px;
+}
+.theme-selector {
+  min-height: 375px;
+}
+.theme-selector .incompatible {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.theme-selector .operations {
+  margin-top: .7em;
+  margin-right: .7em; /* LTR */
+  padding: 0;
+}
+[dir="rtl"] .theme-selector .operations {
+  margin-right: 0;
+  margin-left: .7em; /* LTR */
+}
+.theme-selector .operations li {
+  float: left; /* LTR */
+  margin: 0;
+  margin-right: 0.7em; /* LTR */
+  padding-right: 0.7em; /* LTR */
+  list-style-type: none;
+  border-right: 1px solid #CCC;  /* LTR */
+}
+[dir="rtl"] .theme-selector .operations li {
+  float: right;
+  border-left: 1px solid #CCC;
+  margin-left: 0.7em;
+  padding-left: 0.7em;
+  border-right: none;
+}
+.theme-selector .operations li:last-child {
+  border-right: none; /* LTR */
+}
+[dir="rtl"] .theme-selector .operations li:last-child {
+  border-left: none;
+}
+.system-themes-admin-form {
+  clear: left; /* LTR */
+}
+[dir="rtl"] .system-themes-admin-form {
+  clear: right;
+}

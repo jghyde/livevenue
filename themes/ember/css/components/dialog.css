@@ -1,0 +1,138 @@
+/**
+ * Presentational styles for Drupal dialogs.
+ */
+
+.ui-dialog {
+  font-family: "Proxima Nova", "Helvetica Neue", "Helvetica-Neue", Helvetica, sans-serif;
+  background: transparent;
+  border: 0;
+  position: absolute;
+  z-index: 1260;
+  padding: 0;
+}
+.ui-dialog .button {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;  /* 1 */
+  text-align: center;
+  line-height: normal;  /* 2 */
+  cursor: pointer;
+  -webkit-appearance: none;  /* 3 */
+  -moz-appearance: none;  /* 3 */
+  padding: 4px 1.5em;  /* 4 */
+  border: 2px solid #39B4E9;
+  border-radius: 20em;
+  background: #fff;
+  color: #39B4E9;
+  text-decoration: none;
+  font-size: 14px;
+  font-size: 0.875rem;  /* 5 */
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  -webkit-font-smoothing: antialiased;  /* 6 */
+}
+.ui-dialog .button:hover,
+.ui-dialog .button:focus {
+  color: #555;
+  background: #fff;
+  text-decoration: none;
+  outline: none;
+}
+
+@media all and (max-width: 48em) { /* 768px */
+  .ui-dialog {
+    width: 92% !important;
+  }
+}
+.ui-dialog .ui-dialog-titlebar {
+  background-color: #39B4E9;
+  color: #ffffff;
+  padding: 15px 49px 15px 15px;
+}
+.ui-dialog .ui-dialog-title {
+  font-size: 1.3em;
+  font-weight: 600;
+  margin: 0;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+  border: 0;
+  background: none;
+  right: 20px; /* LTR */
+  top: 20px;
+  margin: 0;
+  height: 16px;
+  width: 16px;
+  position: absolute;
+}
+[dir="rtl"] .ui-dialog .ui-dialog-titlebar-close {
+  right: auto;
+  left: 20px;
+}
+.ui-dialog .ui-icon.ui-icon-closethick {
+  background: url(../../../../core/misc/icons/ffffff/ex.svg) 0 0 no-repeat;
+  margin-top: -12px;
+}
+.ui-dialog .ui-widget-content.ui-dialog-content {
+  background: #ffffff;
+  border: 1px solid;
+  border-color: transparent #ddd transparent #ddd;
+  overflow: auto;
+  padding: 1em;
+}
+.views-ui-dialog .ui-widget-content.ui-dialog-content {
+  padding: 0;
+}
+.ui-dialog .ui-widget-content.ui-dialog-buttonpane {
+  background: #ccc;
+  margin: 0;
+  padding: 15px 20px;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+  margin: 0;
+  padding: 0;
+  float: none;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-button-text-only .ui-button-text {
+  padding: 0;
+}
+.ui-dialog .ui-dialog-content {
+  position: static;
+}
+
+/* Form action buttons are moved in dialogs. Remove empty space. */
+.ui-dialog .ui-dialog-content .form-actions {
+  padding: 0;
+  margin: 0;
+}
+.ui-dialog .ajax-progress-throbber {
+  /* Can't do center:50% middle: 50%, so approximate it for a typical window size. */
+  left: 49%; /* LTR */
+  position: fixed;
+  top: 48.5%;
+  z-index: 1000;
+  background-color: #232323;
+  background-image: url(../../../../core/misc/loading-small.gif);
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 7px;
+  height: 24px;
+  opacity: 0.9;
+  padding: 4px;
+  width: 24px;
+}
+[dir="rtl"] .ui-dialog .ajax-progress-throbber {
+  left: auto;
+  right: 49%;
+}
+.ui-dialog .ajax-progress-throbber .throbber,
+.ui-dialog .ajax-progress-throbber .message {
+  display: none;
+}
+/* quick fix for strange widget css bleedthrough */
+.ui-widget {
+    font-family: inherit;
+    font-size: inherit;
+}
+

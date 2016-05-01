@@ -1,0 +1,260 @@
+/**
+ * Tables.
+ */
+table {
+  width: 100%;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 10px;
+  margin-left: 0;
+  font-size: 0.923em;
+}
+caption {
+  text-align: left; /* LTR */
+}
+[dir="rtl"] caption {
+  text-align: right;
+}
+th {
+  text-align: left; /* LTR */
+  padding: 5px 12px;
+}
+[dir="rtl"] th {
+  text-align: right;
+}
+thead th {
+  font-family: "montserratregular";
+  font-weight: normal;
+  text-transform: uppercase;
+  border: solid #ccc;
+  border-width: 0 0 1px 0;
+}
+th:first-child,
+td:first-child {
+  padding-left: 0px; /* LTR */
+}
+[dir="rtl"] th:first-child,
+td:first-child {
+  padding-right: 0px;
+}
+tr {
+  border-bottom: 1px solid #DDD;
+  padding: 0em;
+}
+thead > tr {
+  width: 100%;
+}
+tbody tr:hover,
+tbody tr:focus {
+  background: #F9F9F9;
+}
+
+/* See colors.css */
+tbody tr.color-warning:hover,
+tbody tr.color-warning:focus {
+  background: #FDF8ED;
+}
+tbody tr.color-error:hover,
+tbody tr.color-error:focus {
+  background: #FCF4F2;
+}
+td,
+th {
+  vertical-align: middle;
+}
+td {
+  padding: 5px 12px;
+  text-align: left; /* LTR */
+}
+td div {
+  padding: 0;
+}
+td .form-item {
+    margin: 0;
+    padding: 0;
+}
+th.select-all  {
+  margin: 0;
+  padding: 0 1em;
+}
+[dir="rtl"] td {
+  text-align: right;
+}
+th > a {
+  position: relative;
+  display: block;
+}
+
+/**
+ * Table select behavior.
+ * @see tableselect.js
+ */
+
+tr.selected td {
+  background: #EEF8DF;
+}
+td .form-type-checkbox,
+th .form-type-checkbox {
+  text-align: center;
+}
+[dir="rtl"] td .form-type-checkbox,
+[dir="rtl"] th .form-type-checkbox {
+  /* This is required to win over specificity of [dir="rtl"] td */
+  text-align: center;
+}
+
+
+/* 1. Must match negative bottom padding of the parent, <th>
+/* left and right must match <th> padding so that the underline extends to the bounds of the background in the cell below.  */
+th > a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -5px; /* 1. */
+  left: -12px;
+  right: -12px;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+th:first-child > a:after {
+  left: 0px; /* LTR */
+}
+th:last-child > a:after {
+  right: 0px; /* LTR */
+}
+[dir="rtl"] th:first-child > a:after {
+  right: 0px; 
+}
+[dir="rtl"] th:last-child > a:after {
+  left: 0px;
+}
+th.is-active > a {
+  color: #149BCF;
+}
+th.is-active img {
+  position: absolute;
+  right: 0; /* LTR */
+  top: 50%;
+}
+[dir="rtl"] th.is-active img {
+  right: auto;
+  left: 0;
+}
+th.is-active > a:after {
+  border-bottom-color: #149bcf;
+}
+th > a:hover,
+th > a:focus,
+th.is-active > a:hover,
+th.is-active > a:focus {
+  color: #149bcf;
+  text-decoration: none;
+}
+th > a:hover:after,
+th > a:focus:after,
+th.is-active > a:hover:after,
+th.is-active > a:focus:after {
+  border-bottom-color: #149BCF;
+}
+td .item-list ul {
+  margin: 0;
+}
+td.is-active {
+  background: #F5F5F5;
+}
+td.is-active:hover {
+  background: #fff;
+}
+
+/* Force browsers to calculate the width of a 'select all' TH element. */
+th.select-all {
+  width: 1px;
+}
+
+/**
+ * Captions.
+ */
+.caption {
+  margin-bottom: 1.2em;
+}
+
+/* make titles bigger for more scannability */
+td.views-field.views-field-title a {
+  font-size: 1.2em;
+}
+
+/* in tables, style buttons like links to remove visual noise */
+table .button--small {
+  border: 0px;
+  padding: 0px;
+  background; 0px;
+}
+
+/**
+ * Responsive tables.
+ */
+@media screen and (max-width: 37.5em) { /* 600px */
+  th.priority-low,
+  td.priority-low,
+  th.priority-medium,
+  td.priority-medium {
+    display: none;
+  }
+}
+@media screen and (max-width: 60em) { /* 920px */
+  th.priority-low,
+  td.priority-low {
+    display: none;
+  }
+}
+
+/* move dropbutton to the right. */
+/* todo: figure out how to alter js to make dropbutton expand to the left instead of right when it contains larger links. */
+td.views-field.views-field-operations {
+  min-width: 90px;
+}
+
+/* lists with one item have a bullet which is weird */
+td.item-list ul li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Tables with sections as in Block layout and Modules pages.
+ */
+
+/* differentiate section rows and titles from other rows and seperate regions to make them more scannable. */
+tr.region-title,
+details.package-listing  {
+  background: #EEE;
+  line-height: 2em;
+  border-top: .5em solid #FFF;
+}
+/* prevent system modules package listing stying from cascading into children */
+details:not(.package-listing),
+.system-modules tr.odd,
+.system-modules tr.even {
+  background-color: #FFF;
+}
+/* make title rows take up less space */
+tr.region-title td,
+details.package-listing summary {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+tr.region-title td:hover {
+  background-color: #EEE;
+}
+tr.region-title a {
+  background: transparent;
+}
+/* todo: change twig file to make this visually hidden so screen readers still read it out */
+button.tabledrag-toggle-weight {
+  display: none;
+}
