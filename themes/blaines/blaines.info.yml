@@ -23,4 +23,6 @@ regions:
 libraries:
   - 'blaines/global-styling'
   - 'blaines/bootstrap-scripts'
-  - 'blaines/typekit'
+  - 'blaines/iosslider'
+  - 'blaines/inview'
+  

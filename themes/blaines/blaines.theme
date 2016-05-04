@@ -85,10 +85,10 @@ function blaines_preprocess_region(&$var) {
 
 function blaines_preprocess_views_view_fields($vars) {
   if ($vars['view']->current_display == 'iosslider') {
-    if (isset($vars['fields']['field_main_image_1']->content->string) && strpos($vars['fields']['field_main_image_1']->content->string, 'http')) {
+    if (isset($vars['fields']['field_main_image_1']->content) && strpos($vars['fields']['field_main_image_1']->content, 'http')) {
       //then the main image is coming from the event node not the artist node that is a relationship,
       //so we need to insert the contents into the field_main_image
-      $vars['fields']['field_main_image']->content->string = $vars['fields']['field_main_image_1']->content->string;
+      $vars['fields']['field_main_image']->content = $vars['fields']['field_main_image_1']->content;
     }
   }
 }

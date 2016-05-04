@@ -34,10 +34,14 @@
 
 
 <div class="slide" style="background-image: url({{ fields.field_main_image.content|striptags }});">
-  {{ fields.title.content }}
-  {{ fields.field_date.content }}
-  {{ fields.field_date_line.content }}
-  {{ fields.field_link.content }}
-  {{ fields.view_node.content }}
-
+  <div class="words">
+    <h3>{{ fields.title.content }}</h3>
+    <p class="date">
+      {{ fields.field_date.content }}
+      {{ fields.field_date_line.content }}</p>
+    <p class="view-node">
+      {{ fields.field_link.content }}
+      {{ fields.view_node.content }}
+    </p>
+  </div>
 </div>

@@ -17,17 +17,19 @@ bootstrap-scripts:
     bootstrap/js/scrollspy.js: {}
     bootstrap/js/tab.js: {}
     bootstrap/js/transition.js: {}
-typekit:
-    header: true
-    js:
-      //use.typekit.net/zrx5kck.js: { every_page: true }
-      js/typekit.js: { every_page: true }
+
 iosslider:
   version: 1.x
   js:
     js/iosslider/_src/jquery.iosslider.min.js: {}
     js/liveiosslider.js: {}
+    js/underscore-min.js: {}
+
   dependencies:
     - core/jquery
     - core/drupal
     - core/drupalSettings
+inview:
+  js:
+    js/jquery.inview/jquery.inview.min.js: {}
+

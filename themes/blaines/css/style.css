@@ -6937,8 +6937,6 @@ a.btn {
 .iosslider {
   /* required */
   position: relative;
-  top: 0;
-  left: 0;
   overflow: hidden;
   width: 100%;
   height: 900px;
@@ -6952,14 +6950,54 @@ a.btn {
 }
 .iosslider .slider .slide {
   /* required */
+  position: relative;
   float: left;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
 }
+.iosslider .slider .slide .words {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #efefef;
+}
+.iosslider .slider .slide .words h3 {
+  font-size: 72px;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px #000000;
+}
+.iosslider .slider .slide .words .date {
+  font-size: 18px;
+}
+.iosslider .slider .slide .words .view-node a {
+  display: block;
+  width: 150px;
+  height: 40px;
+  margin: 0 auto;
+  line-height: 30px;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 6px;
+  color: #ffffff;
+  padding: 5px 10px;
+  background-color: #186532;
+}
+.iosslider .slider .slide .words .view-node a:hover,
+.iosslider .slider .slide .words .view-node a:active {
+  background-color: #59a171;
+}
 .path-frontpage h1.js-quickedit-page-title.page-header {
   display: none;
+}
+#block-views-block-ios-slider-iosslider {
+  margin-top: -15px;
+}
+.overlay {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAGElEQVQIW2NkwAIYGRgY/qOLgwQxAPGCAFFUAQXr+sj2AAAAAElFTkSuQmCC) 0 0 repeat;
 }
 .clearfix:before,
 .clearfix:after,
@@ -7694,6 +7732,15 @@ body.navbar-is-fixed-bottom {
 }
 .page-node-type-event article.artist h2 {
   display: none;
+}
+.path-frontpage .field--name-body .iphone-badge {
+  margin: 5px;
+}
+.path-frontpage .field--name-body .iphone-badge a {
+  display: block;
+}
+.path-frontpage .field--name-body .col-md-6.iphone {
+  margin: 0 auto;
 }
 /**
  * Panel styling.
