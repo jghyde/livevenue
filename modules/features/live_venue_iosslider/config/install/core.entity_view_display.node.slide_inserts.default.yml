@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.slide_inserts.body
+    - field.field.node.slide_inserts.field_date_line
+    - field.field.node.slide_inserts.field_link
+    - field.field.node.slide_inserts.field_main_image
+    - image.style.16_9large
+    - node.type.slide_inserts
+  module:
+    - image
+    - link
+    - user
+id: node.slide_inserts.default
+targetEntityType: node
+bundle: slide_inserts
+mode: default
+content:
+  field_date_line:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_link:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_main_image:
+    weight: 0
+    label: above
+    settings:
+      image_style: 16_9large
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+hidden:
+  body: true
+  links: true

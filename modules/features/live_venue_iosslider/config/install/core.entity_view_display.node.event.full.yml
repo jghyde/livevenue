@@ -1,0 +1,69 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.event.body
+    - field.field.node.event.field_artist
+    - field.field.node.event.field_date
+    - field.field.node.event.field_main_image
+    - field.field.node.event.field_paypal
+    - node.type.event
+  module:
+    - datetime
+    - field_group
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_details:
+      children:
+        - field_date
+        - field_paypal
+        - body
+      parent_name: ''
+      weight: 0
+      label: Details
+      format_type: details
+      format_settings:
+        label: Details
+        id: ''
+        classes: clearfix
+        open: true
+        required_fields: false
+id: node.event.full
+targetEntityType: node
+bundle: event
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+  field_artist:
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+  field_date:
+    weight: 1
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: real_long_descriptive
+    third_party_settings: {  }
+    type: datetime_default
+  field_paypal:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+hidden:
+  field_main_image: true
+  links: true

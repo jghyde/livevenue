@@ -1,0 +1,107 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.artist.body
+    - field.field.node.artist.field_artist_s_facebook_url
+    - field.field.node.artist.field_artist_s_instagram_url
+    - field.field.node.artist.field_artist_s_twitter_url
+    - field.field.node.artist.field_artist_website_url
+    - field.field.node.artist.field_main_image
+    - field.field.node.artist.field_paragraphs
+    - node.type.artist
+  module:
+    - entity_reference_revisions
+    - field_group
+    - link
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_contact:
+      children:
+        - field_artist_website_url
+        - field_artist_s_facebook_url
+        - field_artist_s_twitter_url
+        - field_artist_s_instagram_url
+      parent_name: ''
+      weight: 0
+      label: Contact
+      format_type: html_element
+      format_settings:
+        label: Contact
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: well
+id: node.artist.full
+targetEntityType: node
+bundle: artist
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  field_artist_s_facebook_url:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_artist_s_instagram_url:
+    weight: 6
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_artist_s_twitter_url:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_artist_website_url:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+hidden:
+  field_main_image: true
+  links: true

@@ -1,0 +1,8 @@
+/sites/default/files
+.idea
+.idea/
+.DS_Store
+*.DS_Store
+*.komodoproject
+*.tar.gz
+sites/default/settings.local.php

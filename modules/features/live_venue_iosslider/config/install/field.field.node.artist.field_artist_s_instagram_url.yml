@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_artist_s_instagram_url
+    - node.type.artist
+  module:
+    - link
+id: node.artist.field_artist_s_instagram_url
+field_name: field_artist_s_instagram_url
+entity_type: node
+bundle: artist
+label: 'Artist''s Instagram URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

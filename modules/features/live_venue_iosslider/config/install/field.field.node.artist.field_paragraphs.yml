@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.artist
+  module:
+    - entity_reference_revisions
+id: node.artist.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: artist
+label: Paragraphs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      text_area: text_area
+      text_with_image_left: text_with_image_left
+      text_with_image_right: text_with_image_right
+      video_embed: video_embed
+    target_bundles_drag_drop:
+      text_area:
+        enabled: true
+        weight: 5
+      text_with_image_left:
+        enabled: true
+        weight: 6
+      text_with_image_right:
+        enabled: true
+        weight: 7
+      video_embed:
+        enabled: true
+        weight: 8
+field_type: entity_reference_revisions

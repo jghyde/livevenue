@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.ios_slider
+  module:
+    - system
+    - views
+  theme:
+    - blaines
+id: views_block__ios_slider_iosslider
+theme: blaines
+region: hero
+weight: -6
+provider: null
+plugin: 'views_block:ios_slider-iosslider'
+settings:
+  id: 'views_block:ios_slider-iosslider'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

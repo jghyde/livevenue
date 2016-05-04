@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_main_image
+    - node.type.event
+  module:
+    - image
+id: node.event.field_main_image
+field_name: field_main_image
+entity_type: node
+bundle: event
+label: 'Main Image'
+description: 'Upload an image if this event DOES NOT have an artist. Example, if you are having a wine tasting or crawfish boil, upload an image of wine or crawfish. Otherwise, the web application will use the "Main Image" of the associated artist chosen. If no image is uploaded, then a default image will be used.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: true
+  title_field_required: true
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

@@ -1,0 +1,86 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.rss
+    - field.field.node.artist.body
+    - field.field.node.artist.field_artist_s_facebook_url
+    - field.field.node.artist.field_artist_s_instagram_url
+    - field.field.node.artist.field_artist_s_twitter_url
+    - field.field.node.artist.field_artist_website_url
+    - field.field.node.artist.field_main_image
+    - field.field.node.artist.field_paragraphs
+    - image.style.large
+    - node.type.artist
+  module:
+    - image
+    - link
+    - text
+    - user
+id: node.artist.rss
+targetEntityType: node
+bundle: artist
+mode: rss
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 1
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  field_artist_s_facebook_url:
+    weight: 3
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_artist_s_instagram_url:
+    weight: 5
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_artist_s_twitter_url:
+    weight: 4
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_artist_website_url:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_main_image:
+    weight: 0
+    label: above
+    settings:
+      image_style: large
+      image_link: content
+    third_party_settings: {  }
+    type: image
+hidden:
+  field_paragraphs: true
+  links: true

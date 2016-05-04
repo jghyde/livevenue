@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Slide Inserts'
+type: slide_inserts
+description: 'A static slide with content about the venue that is inserted into the home page slider.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

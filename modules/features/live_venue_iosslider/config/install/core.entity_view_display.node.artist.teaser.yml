@@ -1,0 +1,111 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.artist.body
+    - field.field.node.artist.field_artist_s_facebook_url
+    - field.field.node.artist.field_artist_s_instagram_url
+    - field.field.node.artist.field_artist_s_twitter_url
+    - field.field.node.artist.field_artist_website_url
+    - field.field.node.artist.field_main_image
+    - field.field.node.artist.field_paragraphs
+    - node.type.artist
+  module:
+    - entity_reference_revisions
+    - field_group
+    - link
+    - responsive_image
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_contact:
+      children:
+        - field_artist_website_url
+        - field_artist_s_facebook_url
+        - field_artist_s_twitter_url
+        - field_artist_s_instagram_url
+      parent_name: ''
+      weight: 3
+      label: Contact
+      format_type: details
+      format_settings:
+        label: Contact
+        id: contact
+        classes: clearfix
+        open: true
+        required_fields: false
+id: node.artist.teaser
+targetEntityType: node
+bundle: artist
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  field_artist_s_facebook_url:
+    type: link
+    weight: 5
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_artist_s_instagram_url:
+    type: link
+    weight: 7
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_artist_s_twitter_url:
+    type: link
+    weight: 6
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_artist_website_url:
+    type: link
+    weight: 4
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_main_image:
+    type: responsive_image
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+hidden:
+  links: true

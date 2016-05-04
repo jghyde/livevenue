@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.slide_inserts.body
+    - field.field.node.slide_inserts.field_date_line
+    - field.field.node.slide_inserts.field_link
+    - field.field.node.slide_inserts.field_main_image
+    - node.type.slide_inserts
+  module:
+    - image_url_formatter
+    - link
+    - user
+id: node.slide_inserts.teaser
+targetEntityType: node
+bundle: slide_inserts
+mode: teaser
+content:
+  field_date_line:
+    type: basic_string
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_link:
+    type: link_separate
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      rel: ''
+      target: ''
+      url_only: false
+      url_plain: false
+    third_party_settings: {  }
+  field_main_image:
+    type: image_url
+    weight: 0
+    label: above
+    settings:
+      url_type: '1'
+      image_style: 16_9large
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  links: true

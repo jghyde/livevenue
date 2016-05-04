@@ -1,0 +1,23 @@
+name: iosslider
+description: 'Inserts the iosSlider on the home page of LIVE! Venue'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - datetime
+  - entity_reference_revisions
+  - field
+  - field_group
+  - image
+  - image_url_formatter
+  - link
+  - menu_ui
+  - node
+  - paragraphs
+  - path
+  - responsive_image
+  - system
+  - text
+  - user
+  - views
+package: 'LIVE! Venue'

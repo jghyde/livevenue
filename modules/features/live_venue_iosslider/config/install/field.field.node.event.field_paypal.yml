@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paypal
+    - node.type.event
+id: node.event.field_paypal
+field_name: field_paypal
+entity_type: node
+bundle: event
+label: 'Cover Charge'
+description: 'Cut the code for the PayPal widget here if you want to collect a pre-sale door charge.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 'No Cover'
+default_value_callback: ''
+settings: {  }
+field_type: string_long
