@@ -1,0 +1,141 @@
+<html>
+<head>
+    <title>iosSlider Test</title>
+    <script src="/core/assets/vendor/jquery/jquery.min.js?v=2.1.4"></script>
+    <script type = 'text/javascript' src = 'js/iosslider/_src/jquery.iosslider.js'></script>
+    <style media="screen">
+        /* http://meyerweb.com/eric/tools/css/reset/
+   v2.0b1 | 201101
+   NOTE: WORK IN PROGRESS
+   USE WITH CAUTION AND TEST WITH ABANDON */
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        body {
+            line-height: 1;
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+
+        /* remember to define visible focus styles!
+        :focus {
+            outline: ?????;
+        } */
+
+        /* remember to highlight inserts somehow! */
+        ins {
+            text-decoration: none;
+        }
+        del {
+            text-decoration: line-through;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+
+        .iosslider {
+            /* required */
+            position: relative;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+
+            width: 100%;
+            height: 100%;
+        }
+        .iosslider .slider {
+            /* required */
+            width: 100%;
+            height: 100%;
+
+        }
+        .iosslider .slider .slide {
+            /* required */
+            float: left;
+
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .iosslider .slider .slide h3 {
+            color: #ffffff;
+            position: absolute;
+            top: 50%;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+    <script>
+    $(document).ready(function() {
+
+        /* basic - default settings */
+        //$('.iosslider').iosSlider();
+
+        /* some custom settings */
+        $('.iosslider').iosSlider({
+            snapToChildren: true,
+            scrollbar: true,
+            scrollbarHide: false,
+            desktopClickDrag: true,
+            scrollbarLocation: 'bottom',
+            scrollbarHeight: '6px',
+            scrollbarBackground: '#cc0000',
+            scrollbarBorder: '1px solid #000',
+            scrollbarMargin: '0 30px 16px 30px',
+            scrollbarOpacity: '0.75',
+            //onSlideChange: changeSlideIdentifier
+        });
+
+    });
+    </script>
+</head>
+<body>
+<div class="iosslider">
+    <div class="slider">
+        <div class="slide" style="background-image: url(http://blaines/sites/default/files/styles/16_9large/public/artists/2016-04/Radney-Foster-Press-1.jpg?itok=gsqCPxjZ);">
+            <h3>Howdy!</h3>
+        </div>
+        <div class="slide" style="background-image: url(http://blaines/sites/default/files/styles/16_9large/public/artists/2016-05/red-shahan.jpg?itok=yjSXEK5D);">
+            <h3>Howdy 2!</h3>
+        </div>
+    </div>
+</div>
+</body>
+</html>

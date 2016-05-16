@@ -32,4 +32,16 @@ iosslider:
 inview:
   js:
     js/jquery.inview/jquery.inview.min.js: {}
+masonry:
+  js:
+    js/masonry/dist/masonry.pkgd.min.js: {}
+
+googlemaps:
+  js:
+    js/gmap-array.js: {}
+    https://maps.googleapis.com/maps/api/js?key=AIzaSyDHHqox2W_nOU19s4qvdO9rNCJpOX4vj4k&callback=initMap: {type: external, attributes: { defer: true, async: true} }
+typekit:
+  js:
+    https://use.typekit.net/zrx5kck.js: {}
+    js/brixslab.js: {}
 

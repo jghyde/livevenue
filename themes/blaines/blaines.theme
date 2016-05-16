@@ -35,7 +35,6 @@ function blaines_preprocess_region(&$var) {
   // Create the $content variable that templates expect.
   $is_front = FALSE;
   if (isset($var['elements']['#region']) && $var['elements']['#region'] == 'hero') {
-    //@TODO: pull artist first pic for hero of event node.
     if (($node = \Drupal::routeMatch()->getParameter('node')) && $node instanceof \Drupal\node\NodeInterface) {
       // is it an event, artist, or just a plain pages
       $type = $node->getType();
@@ -58,6 +57,12 @@ function blaines_preprocess_region(&$var) {
           if ($_SERVER['REQUEST_URI'] == '/') {
             $is_front = TRUE;
           }
+          if (!$is_front) {
+            $header_image = $node->get('field_main_image')->getValue();
+            if (isset($node->fields['field_main_image'])) {
+              $header_image = $node->get('field_main_image')->getValue();
+            }
+          }
       }
       if (isset($header_image[0]['target_id']) && !empty($header_image[0]['target_id'])) {
         $fid = $header_image[0]['target_id'];
@@ -79,6 +84,16 @@ function blaines_preprocess_region(&$var) {
     }
     else {
       // get default image. Store the fid in variables table so it can be changed
+      if ($_SERVER['REQUEST_URI'] == '/events' || $_SERVER['REQUEST_URI'] == '/contact') {
+        $media = \Drupal::entityManager()->getStorage('media');
+        $img = $media->load(7);
+        $file = \Drupal\file\Entity\File::load(40);
+        $url = \Drupal\image\Entity\ImageStyle::load('16_9large')
+            ->buildUrl($file->getFileUri());
+        $var['main_image'] = $url;
+        $var['title'] = $var['elements']['blaines_page_title']['#markup'];
+        $var['breadcrumbs'] = $var['elements']['blaines_breadcrumbs']['#markup'];
+      }
     }
   }
 }
@@ -88,6 +103,11 @@ function blaines_preprocess_views_view_fields($vars) {
     if (isset($vars['fields']['field_main_image_1']->content) && strpos($vars['fields']['field_main_image_1']->content, 'http')) {
       //then the main image is coming from the event node not the artist node that is a relationship,
       //so we need to insert the contents into the field_main_image
+      $vars['fields']['field_main_image']->content = $vars['fields']['field_main_image_1']->content;
+    }
+  }
+  if ($vars['view']->current_display == 'block_1' && $vars['theme_hook_original'] == 'views_view_fields__events') {
+    if (isset($vars['fields']['field_main_image_1']->content) && $vars['fields']['field_main_image_1']->content != '') {
       $vars['fields']['field_main_image']->content = $vars['fields']['field_main_image_1']->content;
     }
   }

@@ -25,3 +25,8 @@ libraries:
   - 'blaines/bootstrap-scripts'
   - 'blaines/iosslider'
   - 'blaines/inview'
+  - 'blaines/googlemaps'
+  - 'blaines/masonry'
+  - 'blaines/typekit'
+
+

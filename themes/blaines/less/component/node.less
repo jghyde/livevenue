@@ -18,15 +18,77 @@
 }
 
 .path-frontpage {
+  article {
+    margin-bottom: 5em;
+  }
   .field--name-body {
     .iphone-badge {
-      margin: 5px;
       a {
         display: block;
       }
     }
     .col-md-6.iphone {
-      margin: 0 auto;
+      img {
+        margin: 0 auto;
+      }
+
+    }
+  }
+}
+@media screen and (max-width: @screen-xxs) {
+  article {
+    h2 {
+      font-size: @font-size-base * 1.4;
+    }
+
+  }
+  h2.block-title {
+    font-size: @font-size-base * 1.4;
+  }
+}
+.field--name-body {
+
+  .align-right {
+    background-color: @rgba-complement-1;
+    margin: 1em 0;
+    padding-bottom: 1em;
+    img {
+      width: 60%;
+      height: auto;
+      margin: 0 0 20px 20px;
+    }
+    figcaption {
+      text-align: center;
+      font-style: italic;
+    }
+  }
+  .align-left {
+    background-color: @rgba-complement-1;
+    margin: 1em 0;
+    padding-bottom: 1em;
+    img {
+      width: 60%;
+      height: auto;
+      margin: 0 20px 20px 0;
+    }
+    figcaption {
+      text-align: center;
+      font-style: italic;
+    }
+  }
+  .align-center {
+    background-color: @rgba-complement-1;
+    margin: 1em 0;
+    padding-bottom: 1em;
+    img {
+      clear: both;
+      margin: 1em 10%;
+      width: 80%;
+      height: auto;
+    }
+    figcaption {
+      text-align: center;
+      font-style: italic;
     }
   }
 }

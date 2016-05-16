@@ -65,13 +65,38 @@
 .btn.instagram:hover {
   background-color: rgb(77, 105, 162);
 }
+article.artist {
+  .well {
+    .clearfix();
+    .btn {
+      margin-bottom: 0.5em;
+    }
+  }
+}
+@media screen and (max-width: @screen-md) {
+  .well {
+    .btn {
+      margin: 0 0.5em 0.5em 0.5em;
+      width: 46%;
+      float: left;
+    }
+  }
+}
+@media screen and (max-width: @screen-xs) {
+  .well {
+    .btn {
+      margin: 0 0 0.5em 0;
+      width: 100%;
+    }
+  }
+}
 
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-serif:       'Buenard', "Times New Roman", Times, serif;
+@font-family-sans-serif:  "brix-slab", Helvetica, Arial, sans-serif;
+@font-family-serif:       "Times New Roman", Times, serif;
 
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -128,6 +153,8 @@ body, body > p {
 @navbar-inverse-toggle-hover-bg:            #333;
 @navbar-inverse-toggle-icon-bar-bg:         #fff;
 @navbar-inverse-toggle-border-color:        #333;
-.navbar {
-  display: none;
+
+body > footer {
+  margin-top: 0!important;
+  border-top: none;
 }

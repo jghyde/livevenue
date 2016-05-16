@@ -95,7 +95,11 @@
     </header>
   {% endblock %}
 {% endif %}
+{% if page.hero %}
 
+  {{ page.hero }}
+
+{% endif %}
 {# Main #}
 {% block main %}
   <div role="main" class="main-container {{ container }} js-quickedit-main-content">

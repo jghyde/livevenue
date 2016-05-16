@@ -72,10 +72,77 @@ article {
 }
 @media screen and (max-width: @screen-md-min) {
   .field--name-field-paypal {
+    min-width: 0px;
+    width: 100%;
+    margin: 0 0 1em 0 ;
+  }
+}
+@media screen and (min-width: @screen-sm) {
+  .field--name-field-paypal {
     width: 100%;
     margin: 0 0 1em 0 ;
   }
 }
 .field--name-field-date {
   font-size: larger;
+}
+.main-container {
+  .iphone-badge {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .Android-badge {
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+  .iphone {
+    position: relative;
+    img {
+      position: absolute;
+      top: -60px;
+      left: 30%;
+      z-index: 2;
+    }
+  }
+}
+@media screen and (max-width: @screen-md) {
+  .main-container {
+    .iphone-badge {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .Android-badge {
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+    .iphone {
+      position: relative;
+      text-align: center;
+      img {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        width: 300px;
+        height: auto;
+      }
+    }
+  }
+}
+#block-views-block-events-block-1 {
+  z-index: 3;
+  .view-content {
+    z-index: 3;
+    .views-row {
+      z-index: 3;
+    }
+  }
 }

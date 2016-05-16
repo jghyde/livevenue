@@ -10,6 +10,7 @@
   background-position: 0%;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 1em;
   .page-header {
     margin: 0;
     padding: 0;
@@ -28,5 +29,46 @@
     .page-header {
       right: 10em;
     }
+  }
+}
+#overlay-logo {
+  position: absolute;
+  top: 3%;
+  right: 2%;
+  z-index: 2;
+  -ms-transform: rotate(15deg); /* IE 9 */
+  -webkit-transform: rotate(15deg); /* Safari */
+  transform: rotate(15deg);
+}
+@media only screen and (min-width: @screen-md) and (max-width: @screen-lg-min) {
+  #overlay-logo {
+    top: 3%;
+    right: 2%;
+    width: 240px;
+    height: auto;
+  }
+}
+@media only screen and (min-width: @screen-sm) and (max-width: @screen-md-min) {
+  #overlay-logo {
+    top: 8px;
+    right: 8px;
+    width: 200px;
+    height: auto;
+  }
+}
+@media only screen and (max-width: @screen-xs) {
+  #overlay-logo {
+    top: 4px;
+    right: 4px;
+    width: 100px;
+    height: auto;
+  }
+}
+@media only screen and (max-width: @screen-xxs) {
+  #overlay-logo {
+    top: 3px;
+    right: 3px;
+    width: 90px;
+    height: auto;
   }
 }

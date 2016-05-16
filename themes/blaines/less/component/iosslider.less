@@ -71,3 +71,62 @@
 .overlay {
   background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAGElEQVQIW2NkwAIYGRgY/qOLgwQxAPGCAFFUAQXr+sj2AAAAAElFTkSuQmCC) 0 0 repeat;
 }
+@media only screen and (min-width: @screen-sm) and (max-width: @screen-md-min) {
+  #block-views-block-ios-slider-iosslider {
+    width: 100%;
+    .iosslider {
+      /* slider */
+      .slider {
+        /* slide */
+        .slide {
+          .words {
+            top: 55%;
+            h3 {
+              font-size: 48px;
+            }
+            .date {
+              font-size: @font-size-large;
+            }
+            .view-node {
+              a {
+                height: 35px;
+                line-height: 1.3;
+              }
+              a:hover, a:active {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: @screen-sm-max) {
+  #block-views-block-ios-slider-iosslider {
+    .iosslider {
+      /* slider */
+      .slider {
+        /* slide */
+        .slide {
+          .words {
+            top: 26%;
+            h3 {
+              font-size: 28px;
+            }
+            .date {
+              font-size: @font-size-base;
+            }
+            .view-node {
+              a {
+                height: 35px;
+                line-height: 1.3;
+              }
+              a:hover, a:active {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
