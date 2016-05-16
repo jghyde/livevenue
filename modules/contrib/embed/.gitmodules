@@ -1,0 +1,6 @@
+[submodule "url_embed"]
+	path = url_embed
+	url = git@github.com:drupal-media/url_embed.git
+[submodule "entity_embed"]
+	path = entity_embed
+	url = git@github.com:drupal-media/entity_embed.git
