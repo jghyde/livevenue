@@ -16,18 +16,12 @@
 [submodule "modules/contrib/media_entity_instagram"]
 	path = modules/contrib/media_entity_instagram
 	url = https://git.drupal.org/project/media_entity_instagram.git
-[submodule "modules/contrib/embed"]
-	path = modules/contrib/embed
-	url = https://git.drupal.org/project/embed.git
 [submodule "modules/contrib/image_effects"]
 	path = modules/contrib/image_effects
 	url = git@github.com:drupal-media/image_effects.git
 [submodule "modules/contrib/crop"]
 	path = modules/contrib/crop
 	url = git@github.com:drupal-media/crop.git
-[submodule "modules/contrib/media_entity_embeddable_vide"]
-	path = modules/contrib/media_entity_embeddable_vide
-	url = git@github.com:drupal-media/media_entity_embeddable_video.git
 [submodule "modules/contrib/dropzonejs"]
 	path = modules/contrib/dropzonejs
 	url = git@github.com:drupal-media/dropzonejs.git
