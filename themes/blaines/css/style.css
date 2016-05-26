@@ -7782,7 +7782,6 @@ div#hydebread ol.breadcrumb li::before {
 .block #map {
   width: 100%;
   height: 300px;
-  margin-bottom: 2em;
 }
 /**
  * Alert styling.

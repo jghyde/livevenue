@@ -72,7 +72,7 @@
                     .mouseout(function() {
                         $(this).fadeTo(500, 1);
                     });
-                $('.view-display-id-block_1 .views-row a img')
+                $('.view-events .views-row a img')
                     .mouseover(function() {
                         $(this).fadeTo(200, 0.8);
                     })
