@@ -50,6 +50,7 @@ var styles = [{
     // Create a map object, and include the MapTypeId to add
     // to the map type control.
     var mapOptions = {
+        scrollwheel: false,
         zoom: 17,
         center: new google.maps.LatLng(myLatLng),
         mapTypeControlOptions: {
