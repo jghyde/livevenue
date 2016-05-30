@@ -7004,6 +7004,7 @@ a.btn {
   width: 100%;
   text-align: center;
   color: #efefef;
+  text-shadow: 1px 1px 1px #000000;
 }
 #block-views-block-ios-slider-iosslider .iosslider .slider .slide .words h3 {
   font-size: 72px;
@@ -7418,7 +7419,7 @@ a.btn {
 }
 #overlay-logo {
   position: absolute;
-  top: 1%;
+  top: 2%;
   right: 2%;
   z-index: 2;
   -ms-transform: rotate(15deg);
@@ -7429,7 +7430,7 @@ a.btn {
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   #overlay-logo {
-    top: 1%;
+    top: 2%;
     right: 2%;
     width: 240px;
     height: auto;
