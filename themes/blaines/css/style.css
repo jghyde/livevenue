@@ -7418,7 +7418,7 @@ a.btn {
 }
 #overlay-logo {
   position: absolute;
-  top: 3%;
+  top: 1%;
   right: 2%;
   z-index: 2;
   -ms-transform: rotate(15deg);
@@ -7429,7 +7429,7 @@ a.btn {
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   #overlay-logo {
-    top: 3%;
+    top: 1%;
     right: 2%;
     width: 240px;
     height: auto;
@@ -7519,6 +7519,19 @@ div#hydebread ol.breadcrumb li::before {
   content: none;
   padding: 0;
   color: transparent;
+}
+body > div.main-container.container-fluid.js-quickedit-main-content > div > section.front-content {
+  padding: 0;
+}
+body > div.main-container.container-fluid.js-quickedit-main-content > div > section.front-content .content {
+  padding: 0 15px;
+}
+body > div.main-container.container-fluid.js-quickedit-main-content > div > section.front-content #block-spotify {
+  padding: 0 15px 15px;
+  background-color: #dbac79;
+}
+#block-views-block-events-block-1 h2 {
+  margin-left: 15px;
 }
 .view-events .views-row {
   position: relative;
@@ -7759,6 +7772,9 @@ div#hydebread ol.breadcrumb li::before {
   display: inline-block;
   color: #ffffff;
 }
+.footer #block-socialmedia .field--name-body a:hover {
+  color: #dbac79;
+}
 .footer #block-footeraddress {
   text-align: center;
   margin: 0 0 1em 0;
@@ -7770,7 +7786,7 @@ div#hydebread ol.breadcrumb li::before {
   color: #000000;
 }
 #block-gmapblockforhomepage {
-  margin: 0 -15px;
+  margin: 0;
 }
 #block-gmapblockforhomepage h2 {
   margin: 1em 15px 0.5em;

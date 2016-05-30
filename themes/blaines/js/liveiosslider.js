@@ -37,25 +37,28 @@
             if (testWidth > 769) {
                 $('.col-md-7.iphone img').on('inview', function (event, isInView) {
                     var w = $('.col-md-7.iphone img').width();
-                    var max = $('.col-md-7.iphone').width();
+                    //var max = $('.col-md-7.iphone').width();
+                    var max = 600;
+                    console.log(max);
                     var growWidth = 0;
                     var wScroll = 0;
                     if (isInView) {
-
                         $(window).scroll(function () {
                             var wScroll = $(this).scrollTop();
                             growWidth = w * (1 + 2 * (wScroll / 10000));
                             var margin = wScroll / 2;
-                            if (growWidth < max && margin < 400 &&
-                                ($('.col-md-7.iphone img').width() < 530 && $('.col-md-7.iphone img').width() > 0)) {
-                                $('.col-md-7.iphone img').width(growWidth).css('top', (-1) * margin + 'px');
+                            if (growWidth < 600 && margin < 300) {
+                                if (max > growWidth) {
+                                    $('.col-md-7.iphone img').width(growWidth).css('top', (-1) * margin + 'px');
+                                }
                             }
                         });
                     } else {
-                        $('.col-md-7.iphone img').css('width', 443 + 'px');
+                        $('.col-md-7.iphone img').width(496).css('top', '-60px');
+                       /* $('.col-md-7.iphone img').css('width', 443 + 'px');
                         $('.col-md-7.iphone img').css('top', 0 + 'px');
                         growWidth = 0;
-                        wScroll = 0;
+                        wScroll = 0;*/
                     }
                 });
                 $('.iphone-badge a img')

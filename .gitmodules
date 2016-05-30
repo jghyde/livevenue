@@ -37,9 +37,6 @@
 [submodule "modules/contrib/ctools"]
 	path = modules/contrib/ctools
 	url = https://git.drupal.org/project/ctools.git
-[submodule "modules/contrib/fontyourface"]
-	path = modules/contrib/fontyourface
-	url = https://git.drupal.org/project/fontyourface.git
 [submodule "modules/contrib/file_entity"]
 	path = modules/contrib/file_entity
 	url = https://git.drupal.org/project/file_entity.git
