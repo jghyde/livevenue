@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains \Drupal\google_analytics\Form\GoogleAnalyticsAdminSettingsForm.
- */
 
 namespace Drupal\google_analytics\Form;
 
@@ -131,7 +127,7 @@ class GoogleAnalyticsAdminSettingsForm extends ConfigFormBase {
 
     // Page specific visibility configurations.
     $account = \Drupal::currentUser();
-    $php_access = $account->hasPermission('use PHP for tracking visibility');
+    $php_access = $account->hasPermission('use PHP for google analytics tracking visibility');
     $visibility_request_path_pages = $config->get('visibility.request_path_pages');
 
     $form['tracking']['page_visibility_settings'] = [
@@ -329,10 +325,10 @@ class GoogleAnalyticsAdminSettingsForm extends ConfigFormBase {
       '#disabled' => (\Drupal::moduleHandler()->moduleExists('search') ? FALSE : TRUE),
     ];
     $form['tracking']['search_and_advertising']['google_analytics_trackadsense'] = [
-       '#type' => 'checkbox',
-       '#title' => $this->t('Track AdSense ads'),
-       '#description' => $this->t('If checked, your AdSense ads will be tracked in your Google Analytics account.'),
-       '#default_value' => $config->get('track.adsense'),
+      '#type' => 'checkbox',
+      '#title' => $this->t('Track AdSense ads'),
+      '#description' => $this->t('If checked, your AdSense ads will be tracked in your Google Analytics account.'),
+      '#default_value' => $config->get('track.adsense'),
     ];
     $form['tracking']['search_and_advertising']['google_analytics_trackdisplayfeatures'] = [
       '#type' => 'checkbox',
@@ -636,7 +632,7 @@ class GoogleAnalyticsAdminSettingsForm extends ConfigFormBase {
       ->set('track.userid', $form_state->getValue('google_analytics_trackuserid'))
       ->set('track.mailto', $form_state->getValue('google_analytics_trackmailto'))
       ->set('track.messages', $form_state->getValue('google_analytics_trackmessages'))
-      ->set('track.outbound', $form_state->getValue('google_analytics_trackmailto'))
+      ->set('track.outbound', $form_state->getValue('google_analytics_trackoutbound'))
       ->set('track.site_search', $form_state->getValue('google_analytics_site_search'))
       ->set('track.adsense', $form_state->getValue('google_analytics_trackadsense'))
       ->set('track.displayfeatures', $form_state->getValue('google_analytics_trackdisplayfeatures'))
@@ -834,7 +830,7 @@ class GoogleAnalyticsAdminSettingsForm extends ConfigFormBase {
         $value = trim($matches[2]);
       }
       else {
-        return;
+        return NULL;
       }
 
       $values[$name] = $value;

@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\google_analytics\Tests\GoogleAnalyticsBasicTest.
- */
-
 namespace Drupal\google_analytics\Tests;
 
 use Drupal\Core\Session\AccountInterface;
@@ -23,7 +18,10 @@ class GoogleAnalyticsBasicTest extends WebTestBase {
    *
    * @var array
    */
-  public static $modules = ['google_analytics'];
+  public static $modules = [
+    'help',
+    'google_analytics',
+  ];
 
   /**
    * {@inheritdoc}
@@ -66,6 +64,20 @@ class GoogleAnalyticsBasicTest extends WebTestBase {
     $edit['google_analytics_account'] = $this->randomMachineName(2);
     $this->drupalPostForm('admin/config/system/google-analytics', $edit, t('Save configuration'));
     $this->assertRaw(t('A valid Google Analytics Web Property ID is case sensitive and formatted like UA-xxxxxxx-yy.'), '[testGoogleAnalyticsConfiguration]: Invalid Web Property ID number validated.');
+  }
+
+  /**
+   * Tests if help sections are shown.
+   */
+  public function testGoogleAnalyticsHelp() {
+    // Requires help.module.
+    // @fixme: help is not shown in side the test for unknown reason.
+    $this->drupalGet('admin/config/system/google-analytics');
+    $this->assertText('Google Analytics is a free (registration required) website traffic and marketing effectiveness service.', '[testGoogleAnalyticsHelp]: Google Analytics help text shown on module settings page.');
+
+    // Requires help.module.
+    $this->drupalGet('admin/help/google_analytics');
+    $this->assertText('Google Analytics adds a web statistics tracking system to your website.', '[testGoogleAnalyticsHelp]: Google Analytics help text shown in help section.');
   }
 
   /**
