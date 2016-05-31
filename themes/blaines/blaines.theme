@@ -166,6 +166,7 @@ function blaines_page_attachments_alter(array &$attach) {
             '#tag' => 'meta',
             '#attributes' => array(
               'name' => 'event:start_time',
+              'type' => 'date_time',
               'content' => $start[0]['value'],
             ),
           ),
