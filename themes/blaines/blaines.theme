@@ -158,6 +158,19 @@ function blaines_page_attachments_alter(array &$attach) {
           ),
           1 => 'og_image_width',
         );
+        // Add the event start time
+        //property="event:start_time"
+        $start = $node->get('field_date')->getValue();
+        $attach['#attached']['html_head'][] = array(
+          0 => array(
+            '#tag' => 'meta',
+            '#attributes' => array(
+              'name' => 'event:start_time',
+              'content' => $start[0]['value'],
+            ),
+          ),
+          1 => 'event_start_time',
+        );
         foreach ($attach['#attached']['html_head'] as $k => $v) {
           if ($v[0]['#attributes']['property'] == 'twitter:image') {
             $attach['#attached']['html_head'][$k][0]['#attributes']['content'] = $url;
