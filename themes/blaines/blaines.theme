@@ -173,8 +173,10 @@ function blaines_page_attachments_alter(array &$attach) {
           1 => 'event_start_time',
         );
         foreach ($attach['#attached']['html_head'] as $k => $v) {
-          if ($v[0]['#attributes']['property'] == 'twitter:image') {
-            $attach['#attached']['html_head'][$k][0]['#attributes']['content'] = $url;
+          if (isset($v[0]['#attributes']['property'])) {
+            if ($v[0]['#attributes']['property'] == 'twitter:image') {
+              $attach['#attached']['html_head'][$k][0]['#attributes']['content'] = $url;
+            }
           }
         }
       }
