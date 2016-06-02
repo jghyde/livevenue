@@ -7393,7 +7393,7 @@ a.btn {
   padding: 0;
   width: 100%;
   height: 400px;
-  background-position: 0%;
+  background-position: 0 0;
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 1em;
@@ -7412,6 +7412,7 @@ a.btn {
 @media only screen and (min-width: 1200px) {
   .region-hero {
     height: 700px;
+    background-position: 50%;
   }
   .region-hero .page-header {
     right: 10em;
@@ -7429,6 +7430,10 @@ a.btn {
   transform: rotate(15deg);
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .region-hero {
+    height: 700px;
+    background-position: 50%;
+  }
   #overlay-logo {
     top: 2%;
     right: 2%;
@@ -7443,6 +7448,10 @@ a.btn {
     width: 200px;
     height: auto;
   }
+  .region-hero {
+    height: 500px;
+    background-position: 50% 60%;
+  }
 }
 @media only screen and (max-width: 480px) {
   #overlay-logo {
@@ -7451,6 +7460,11 @@ a.btn {
     width: 100px;
     height: auto;
   }
+  .region-hero {
+    height: 180px;
+    background-position: 50% 20%;
+    background-size: cover;
+  }
 }
 @media only screen and (max-width: 375px) {
   #overlay-logo {
@@ -7458,6 +7472,11 @@ a.btn {
     right: 3px;
     width: 90px;
     height: auto;
+  }
+  .region-hero {
+    height: 180px;
+    background-position: 50% 20%;
+    background-size: cover;
   }
 }
 div#hydebread {
@@ -7799,6 +7818,11 @@ body > div.main-container.container-fluid.js-quickedit-main-content > div > sect
 .block #map {
   width: 100%;
   height: 300px;
+}
+@media (max-width: 991px) {
+  .footer #block-socialmedia .field--name-body a {
+    margin: 0 12px;
+  }
 }
 /**
  * Alert styling.
@@ -8275,6 +8299,13 @@ body.navbar-is-fixed-bottom {
 .field--name-body .align-center figcaption {
   text-align: center;
   font-style: italic;
+}
+.artist .content .well a {
+  text-align: left;
+}
+#block-spotify .field--name-body .spotify {
+  width: 100%;
+  height: auto;
 }
 /**
  * Panel styling.
