@@ -115,72 +115,78 @@ function blaines_preprocess_views_view_fields($vars) {
   }
 }
 
-function blaines_page_attachments_alter(array &$attach) {
+function blaines_page_attachments_alter(array &$attach)
+{
   if (($node = \Drupal::routeMatch()->getParameter('node')) && $node instanceof \Drupal\node\NodeInterface) {
     // is it an event, artist, or just a plain pages
     $type = $node->getType();
     if ($type == 'event') {
-      if (empty($image = $node->get('field_main_image')->getValue())) {
+      $ck_img = $image = $node->get('field_main_image')->getValue();
+      if (empty($ck_img)) {
         $nid = $node->get('field_artist')->getValue();
         $artist = \Drupal\node\Entity\Node::load((int)$nid[0]['target_id']);
         $header_image = $artist->get('field_main_image')->getValue();
-        $file = \Drupal\file\Entity\File::load($header_image[0]['target_id']);
-        $url = \Drupal\image\Entity\ImageStyle::load('16_9large')
-          ->buildUrl($file->getFileUri());
-        // Add the og:image
-        $attach['#attached']['html_head'][] = array(
-          0 => array(
-            '#tag' => 'meta',
-            '#attributes' => array(
-              'name' => 'og:image:url',
-              'content' => $url,
-            ),
+      }
+      else {
+        $header_image = $ck_img;
+      }
+      $file = \Drupal\file\Entity\File::load($header_image[0]['target_id']);
+      $url = \Drupal\image\Entity\ImageStyle::load('16_9large')
+        ->buildUrl($file->getFileUri());
+      // Add the og:image
+      $attach['#attached']['html_head'][] = array(
+        0 => array(
+          '#tag' => 'meta',
+          '#attributes' => array(
+            'name' => 'og:image:url',
+            'content' => $url,
           ),
-          1 => 'og_image_url',
-        );
-        // Add the W and H of the og:image
-        $attach['#attached']['html_head'][] = array(
-          0 => array(
-            '#tag' => 'meta',
-            '#attributes' => array(
-              'name' => 'og:image:height',
-              'content' => '675',
-            ),
+        ),
+        1 => 'og_image_url',
+      );
+      // Add the W and H of the og:image
+      $attach['#attached']['html_head'][] = array(
+        0 => array(
+          '#tag' => 'meta',
+          '#attributes' => array(
+            'name' => 'og:image:height',
+            'content' => '675',
           ),
-          1 => 'og_image_height',
-        );
-        $attach['#attached']['html_head'][] = array(
-          0 => array(
-            '#tag' => 'meta',
-            '#attributes' => array(
-              'name' => 'og:image:width',
-              'content' => '1200',
-            ),
+        ),
+        1 => 'og_image_height',
+      );
+      $attach['#attached']['html_head'][] = array(
+        0 => array(
+          '#tag' => 'meta',
+          '#attributes' => array(
+            'name' => 'og:image:width',
+            'content' => '1200',
           ),
-          1 => 'og_image_width',
-        );
-        // Add the event start time
-        //property="event:start_time"
-        $start = $node->get('field_date')->getValue();
-        $attach['#attached']['html_head'][] = array(
-          0 => array(
-            '#tag' => 'meta',
-            '#attributes' => array(
-              'name' => 'event:start_time',
-              'type' => 'date_time',
-              'content' => $start[0]['value'],
-            ),
+        ),
+        1 => 'og_image_width',
+      );
+      // Add the event start time
+      //property="event:start_time"
+      $start = $node->get('field_date')->getValue();
+      $attach['#attached']['html_head'][] = array(
+        0 => array(
+          '#tag' => 'meta',
+          '#attributes' => array(
+            'name' => 'event:start_time',
+            'type' => 'date_time',
+            'content' => $start[0]['value'],
           ),
-          1 => 'event_start_time',
-        );
-        foreach ($attach['#attached']['html_head'] as $k => $v) {
-          if (isset($v[0]['#attributes']['property'])) {
-            if ($v[0]['#attributes']['property'] == 'twitter:image') {
-              $attach['#attached']['html_head'][$k][0]['#attributes']['content'] = $url;
-            }
+        ),
+        1 => 'event_start_time',
+      );
+      foreach ($attach['#attached']['html_head'] as $k => $v) {
+        if (isset($v[0]['#attributes']['property'])) {
+          if ($v[0]['#attributes']['property'] == 'twitter:image') {
+            $attach['#attached']['html_head'][$k][0]['#attributes']['content'] = $url;
           }
         }
       }
+
     }
   }
 }
