@@ -19,22 +19,10 @@ function blaines_theme_suggestions_page_alter(array &$suggestions, array $variab
   }
 }
 
-function blaines_preprocess_page(&$var)
-{
-  if ($var['node']) {
-    if (($node = \Drupal::routeMatch()->getParameter('node')) && $node instanceof \Drupal\node\NodeInterface) {
-      $i = 0;
-    }
-
-    //$header_image = $node->get('field_main_image')->value;
-  }
-}
-
 /**
  * @param $var
  */
-function blaines_preprocess_region(&$var)
-{
+function blaines_preprocess_region(&$var) {
   // Create the $content variable that templates expect.
   $is_front = FALSE;
   if (isset($var['elements']['#region']) && $var['elements']['#region'] == 'hero') {
@@ -100,23 +88,14 @@ function blaines_preprocess_region(&$var)
 }
 
 function blaines_preprocess_views_view_fields($vars) {
-  if ($vars['view']->current_display == 'iosslider') {
-    if (isset($vars['fields']['field_main_image_1']->content) && strpos($vars['fields']['field_main_image_1']->content, 'http')) {
-      //then the main image is coming from the event node not the artist node that is a relationship,
-      //so we need to insert the contents into the field_main_image
-      $vars['fields']['field_main_image']->content = $vars['fields']['field_main_image_1']->content;
-    }
-  }
-  //$vars['view']->element['#name']
-  if ($vars['view']->element['#name'] == 'events') {
+  if ($vars['view']->current_display == 'iosslider' || $vars['view']->element['#name'] == 'events') {
     if (isset($vars['fields']['field_main_image_1']->content) && $vars['fields']['field_main_image_1']->content != '') {
-      $vars['fields']['field_main_image']->content = $vars['fields']['field_main_image_1']->content;
+      $vars['fields']['field_main_image'] = $vars['fields']['field_main_image_1'];
     }
   }
 }
 
-function blaines_page_attachments_alter(array &$attach)
-{
+function blaines_page_attachments_alter(array &$attach) {
   if (($node = \Drupal::routeMatch()->getParameter('node')) && $node instanceof \Drupal\node\NodeInterface) {
     // is it an event, artist, or just a plain pages
     $type = $node->getType();
