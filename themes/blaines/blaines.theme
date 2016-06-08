@@ -46,8 +46,9 @@ function blaines_preprocess_region(&$var)
           $header_image = $node->get('field_main_image')->getValue();
           break;
         case 'event':
-          if (isset($node->fields['field_main_image'])) {
-            $header_image = $node->get('field_main_image')->getValue();
+          $header_image = $node->get('field_main_image')->getValue();
+          if (isset($header_image[0]['target_id'])) {
+            break;
           } else {
             // The event has no field_main_image and we must extract it from the referenced artist node
             $nid = $node->get('field_artist')->getValue();
