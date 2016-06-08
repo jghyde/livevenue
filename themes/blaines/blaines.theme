@@ -87,12 +87,16 @@ function blaines_preprocess_region(&$var) {
   }
 }
 
-function blaines_preprocess_views_view_fields($vars) {
+function blaines_preprocess_views_view_fields(&$vars) {
   if ($vars['view']->current_display == 'iosslider' || $vars['view']->element['#name'] == 'events') {
     if (isset($vars['fields']['field_main_image_1']->content) && $vars['fields']['field_main_image_1']->content != '') {
       $vars['fields']['field_main_image'] = $vars['fields']['field_main_image_1'];
     }
+    elseif (isset($vars['fields']['field_main_image']->content) && $vars['fields']['field_main_image']->content != '') {
+      $vars['fields']['field_main_image'] = $vars['fields']['field_main_image'];
+    }
   }
+    return $vars;
 }
 
 function blaines_page_attachments_alter(array &$attach) {
