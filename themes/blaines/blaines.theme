@@ -99,8 +99,7 @@ function blaines_preprocess_region(&$var)
   }
 }
 
-function blaines_preprocess_views_view_fields($vars)
-{
+function blaines_preprocess_views_view_fields($vars) {
   if ($vars['view']->current_display == 'iosslider') {
     if (isset($vars['fields']['field_main_image_1']->content) && strpos($vars['fields']['field_main_image_1']->content, 'http')) {
       //then the main image is coming from the event node not the artist node that is a relationship,
@@ -108,7 +107,8 @@ function blaines_preprocess_views_view_fields($vars)
       $vars['fields']['field_main_image']->content = $vars['fields']['field_main_image_1']->content;
     }
   }
-  if ($vars['view']->current_display == 'block_1' && $vars['theme_hook_original'] == 'views_view_fields__events') {
+  //$vars['view']->element['#name']
+  if ($vars['view']->element['#name'] == 'events') {
     if (isset($vars['fields']['field_main_image_1']->content) && $vars['fields']['field_main_image_1']->content != '') {
       $vars['fields']['field_main_image']->content = $vars['fields']['field_main_image_1']->content;
     }
