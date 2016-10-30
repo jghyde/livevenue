@@ -8,6 +8,7 @@
 namespace Drupal\field_group\Plugin\field_group\FieldGroupFormatter;
 
 use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility\SafeMarkup;
 use Drupal\field_group\FieldGroupFormatterBase;
 
 /**
@@ -32,7 +33,7 @@ class Fieldset extends FieldGroupFormatterBase {
 
     $element += array(
       '#type' => 'fieldset',
-      '#title' => Html::escape($this->t($this->getLabel())),
+      '#title' => SafeMarkup::checkPlain($this->t($this->getLabel())),
       '#pre_render' => array(),
       '#attributes' => array(),
     );

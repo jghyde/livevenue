@@ -36,7 +36,7 @@ colorbox.settings:
           type: string
           label: 'Style'
         activate:
-          type: boolean
+          type: integer
           label: 'Options'
         transition_type:
           type: string
@@ -74,6 +74,9 @@ colorbox.settings:
         overlayclose:
           type: boolean
           label: 'Overlay close'
+        returnfocus:
+          type: boolean
+          label: 'Return focus'
         fixed:
           type: boolean
           label: 'Fixed'
@@ -85,7 +88,7 @@ colorbox.settings:
           label: 'Slideshow'
           mapping:
             slideshow:
-              type: boolean
+              type: integer
               label: 'Slideshow'
             auto:
               type: boolean

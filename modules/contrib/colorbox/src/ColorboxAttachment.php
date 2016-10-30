@@ -9,11 +9,15 @@ namespace Drupal\colorbox;
 
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
  * An implementation of PageAttachmentInterface for the colorbox library.
  */
 class ColorboxAttachment implements ElementAttachmentInterface {
+
+  use StringTranslationTrait;
+
   /**
    * The service to determin if colorbox should be activated.
    *
@@ -70,6 +74,7 @@ class ColorboxAttachment implements ElementAttachmentInterface {
         'next' => $this->settings->get('custom.text_next'),
         'close' => $this->settings->get('custom.text_close'),
         'overlayClose' => $this->settings->get('custom.overlayclose') ? TRUE : FALSE,
+        'returnFocus' => $this->settings->get('custom.returnfocus') ? TRUE : FALSE,
         'maxWidth' => $this->settings->get('custom.maxwidth'),
         'maxHeight' => $this->settings->get('custom.maxheight'),
         'initialWidth' => $this->settings->get('custom.initialwidth'),
@@ -83,10 +88,10 @@ class ColorboxAttachment implements ElementAttachmentInterface {
     else {
       $js_settings = array(
         'opacity' => '0.85',
-        'current' => t('{current} of {total}'),
-        'previous' => t('« Prev'),
-        'next' => t('Next »'),
-        'close' => t('Close'),
+        'current' => $this->t('{current} of {total}'),
+        'previous' => $this->t('« Prev'),
+        'next' => $this->t('Next »'),
+        'close' => $this->t('Close'),
         'maxWidth' => '98%',
         'maxHeight' => '98%',
         'fixed' => TRUE,

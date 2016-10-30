@@ -8,6 +8,7 @@
 namespace Drupal\field_group\Plugin\field_group\FieldGroupFormatter;
 
 use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility\SafeMarkup;
 use Drupal\field_group\FieldGroupFormatterBase;
 
 /**
@@ -36,7 +37,7 @@ class Tab extends FieldGroupFormatterBase {
 
     $add = array(
       '#type' => 'details',
-      '#title' => Html::escape($this->t($this->getLabel())),
+      '#title' => SafeMarkup::checkPlain($this->t($this->getLabel())),
       '#description' => $this->getSetting('description'),
     );
 

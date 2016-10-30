@@ -1,6 +1,6 @@
 custom:
   style: 'default'
-  activate: false
+  activate: 0
   transition_type: 'elastic'
   transition_speed: 350
   opacity: 0.85
@@ -13,10 +13,11 @@ custom:
   initialwidth: '300'
   initialheight: '250'
   overlayclose: TRUE
+  returnfocus: TRUE
   fixed: TRUE
   scrolling: TRUE
   slideshow:
-    slideshow: false
+    slideshow: 0
     auto: TRUE
     speed: 2500
     text_start: 'start slideshow'

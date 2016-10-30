@@ -60,14 +60,27 @@ class Colorbox extends FormatterBase implements ContainerFactoryPluginInterface 
     $thumbnails = $this->thumbnailFormatter->viewElements($items, $langcode);
     $videos = $this->videoFormatter->viewElements($items, $langcode);
     foreach ($items as $delta => $item) {
+      // Support responsive videos within the colorbox modal.
+      if ($this->getSetting('responsive')) {
+        $videos[$delta]['#attributes']['class'][] = 'video-embed-field-responsive-modal';
+        $videos[$delta]['#attributes']['style'] = sprintf('width:%dpx;', $this->getSetting('modal_max_width'));
+      }
       $element[$delta] = [
         '#type' => 'container',
         '#attributes' => [
-          'data-video-embed-field-modal' => (string) $this->renderer->renderRoot($videos[$delta]),
+          'data-video-embed-field-modal' => (string) $this->renderer->render($videos[$delta]),
           'class' => ['video-embed-field-launch-modal'],
         ],
         '#attached' => [
-          'library' => ['video_embed_field/colorbox'],
+          'library' => [
+            'video_embed_field/colorbox',
+            'video_embed_field/responsive-video',
+          ],
+        ],
+        // Ensure the cache context from the video formatter which was rendered
+        // early still exists in the renderable array for this formatter.
+        '#cache' => [
+          'contexts' => ['user.permissions'],
         ],
         'children' => $thumbnails[$delta],
       ];
@@ -80,16 +93,29 @@ class Colorbox extends FormatterBase implements ContainerFactoryPluginInterface 
    * {@inheritdoc}
    */
   public static function defaultSettings() {
-    return Thumbnail::defaultSettings() + Video::defaultSettings();
+    return Thumbnail::defaultSettings() + Video::defaultSettings() + [
+      'modal_max_width' => '854',
+    ];
   }
 
   /**
    * {@inheritdoc}
    */
   public function settingsForm(array $form, FormStateInterface $form_state) {
-    $form += $this->thumbnailFormatter->settingsForm([], $form_state);
-    $form += $this->videoFormatter->settingsForm([], $form_state);
-    return $form;
+    $element = parent::settingsForm($form, $form_state);
+    $element += $this->thumbnailFormatter->settingsForm([], $form_state);
+    $element += $this->videoFormatter->settingsForm([], $form_state);
+    $element['modal_max_width'] = [
+      '#title' => $this->t('Maximum Width'),
+      '#type' => 'number',
+      '#description' => $this->t('The maximum size of the video opened in the Colorbox window in pixels. For smaller screen sizes, the video will scale.'),
+      '#required' => TRUE,
+      '#field_suffix' => 'px',
+      '#size' => 20,
+      '#states' => ['visible' => [[':input[name*="responsive"]' => ['checked' => TRUE]]]],
+      '#default_value' => $this->getSetting('modal_max_width'),
+    ];
+    return $element;
   }
 
   /**
@@ -97,6 +123,8 @@ class Colorbox extends FormatterBase implements ContainerFactoryPluginInterface 
    */
   public function settingsSummary() {
     $summary[] = $this->t('Thumbnail that launches a modal window.');
+    $summary[] = implode(',', $this->videoFormatter->settingsSummary());
+    $summary[] = implode(',', $this->thumbnailFormatter->settingsSummary());
     return $summary;
   }
 
