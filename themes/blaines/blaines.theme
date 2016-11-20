@@ -116,38 +116,48 @@ function blaines_page_attachments_alter(array &$attach) {
       $file = \Drupal\file\Entity\File::load($header_image[0]['target_id']);
       $url = \Drupal\image\Entity\ImageStyle::load('16_9large')
         ->buildUrl($file->getFileUri());
-      // Add the og:image
-      $attach['#attached']['html_head'][] = array(
-        0 => array(
-          '#tag' => 'meta',
-          '#attributes' => array(
-            'name' => 'og:image:url',
-            'content' => $url,
-          ),
-        ),
-        1 => 'og_image_url',
-      );
-      // Add the W and H of the og:image
-      $attach['#attached']['html_head'][] = array(
-        0 => array(
-          '#tag' => 'meta',
-          '#attributes' => array(
-            'name' => 'og:image:height',
-            'content' => '675',
-          ),
-        ),
-        1 => 'og_image_height',
-      );
-      $attach['#attached']['html_head'][] = array(
-        0 => array(
-          '#tag' => 'meta',
-          '#attributes' => array(
-            'name' => 'og:image:width',
-            'content' => '1200',
-          ),
-        ),
-        1 => 'og_image_width',
-      );
+        // Add the og:image
+        $attach['#attached']['html_head'][] = array(
+            0 => array(
+                '#tag' => 'meta',
+                '#attributes' => array(
+                    'name' => 'og:image:url',
+                    'content' => $url,
+                ),
+            ),
+            1 => 'og_image_url',
+        );
+        // Add the W and H of the og:image
+        $attach['#attached']['html_head'][] = array(
+            0 => array(
+                '#tag' => 'meta',
+                '#attributes' => array(
+                    'name' => 'og:image:height',
+                    'content' => '675',
+                ),
+            ),
+            1 => 'og_image_height',
+        );
+        $attach['#attached']['html_head'][] = array(
+            0 => array(
+                '#tag' => 'meta',
+                '#attributes' => array(
+                    'name' => 'og:image:width',
+                    'content' => '1200',
+                ),
+            ),
+            1 => 'og_image_width',
+        );
+        $attach['#attached']['html_head'][] = array(
+            0 => array(
+                '#tag' => 'meta',
+                '#attributes' => array(
+                    'name' => 'og:image',
+                    'content' => $url,
+                ),
+            ),
+            1 => 'og_image_url',
+        );
       // Add the event start time
       //property="event:start_time"
       $start = $node->get('field_date')->getValue();
