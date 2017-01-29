@@ -7439,6 +7439,8 @@ a.btn {
   -webkit-transform: rotate(15deg);
   /* Safari */
   transform: rotate(15deg);
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .region-hero {
